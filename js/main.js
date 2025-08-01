@@ -33,7 +33,7 @@
     smartSpeed: 500,
     dots: true,
     loop: true,
-    nav: true,
+    nav: false,
     navText: [ 
     ],
   });
@@ -76,3 +76,38 @@
     return false;
   });
 })(jQuery);
+
+document.addEventListener("DOMContentLoaded", function () {
+    const counters = document.querySelectorAll(".counter");
+    const speed = 300; // lower = faster
+
+    const animateCount = (counter) => {
+        const target = +counter.getAttribute("data-target");
+        const increment = target / speed;
+        let count = 0;
+
+        const updateCount = () => {
+            count += increment;
+            if (count < target) {
+                counter.textContent = Math.ceil(count).toLocaleString();
+                requestAnimationFrame(updateCount);
+            } else {
+                counter.textContent = target.toLocaleString() + "+"; // Add "+" after finish
+            }
+        };
+
+        updateCount();
+    };
+
+    // Trigger animation when visible
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                animateCount(entry.target);
+                observer.unobserve(entry.target); // Run once
+            }
+        });
+    }, { threshold: 0.5 });
+
+    counters.forEach((counter) => observer.observe(counter));
+});

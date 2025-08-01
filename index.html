@@ -5,32 +5,47 @@
     <meta charset="utf-8">
     <title>My Brother's Keeper PH</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="" name="keywords">
-    <meta content="" name="description">
+
+    <!-- SEO -->
+    <meta name="description"
+        content="My Brother’s Keeper PH: Empowering communities through outreach, leadership training, and values formation programs in partnership with the PNP.">
+    <meta name="keywords"
+        content="MBK, My Brother's Keeper, outreach, leadership training, PNP, values formation, Philippines">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.facebook.com/MBKPhilippines">
+    <meta property="og:title" content="My Brother's Keeper PH">
+    <meta property="og:description"
+        content="Empowering communities through outreach, leadership training, and values formation programs in partnership with the PNP.">
+    <!--<meta property="og:image" content="https://yourwebsite.com/img/logo.png">-->
+
+    <!-- Favicon -->
     <link rel="icon" type="image/png" href="img/logo.png">
 
-    <!-- Google Web Fonts -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:slnt,wght@-10..0,100..900&display=swap"
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Inter:wght@400;500;700&display=swap"
         rel="stylesheet">
 
-    <!-- Icon Font Stylesheet -->
+    <!-- Icons -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
-    <!-- Libraries Stylesheet -->
+    <!-- Libraries -->
     <link rel="stylesheet" href="lib/animate/animate.min.css" />
     <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
     <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 
-    <!-- Customized Bootstrap Stylesheet -->
+    <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Template Stylesheet -->
+    <!-- Custom Styles -->
     <link href="css/style.css" rel="stylesheet">
 </head>
+
 
 <body>
 
@@ -71,7 +86,7 @@
     <!-- Topbar End -->
 
     <!-- Navbar & Hero Start -->
-    <div class="container-fluid nav-bar px-0 px-lg-4 py-lg-0">
+    <div class="container-fluid nav-bar px-0 px-lg-4 py-lg-0" style="background-color: #dbf0ff;">
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-light">
 
@@ -87,7 +102,7 @@
 
                 <!-- Navigation Menu -->
                 <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
-                    <div class="navbar-nav">
+                    <div class="navbar-nav px-3 rounded" style="background-color: #bee3ff;">
                         <a href="index.html" class="nav-item nav-link active">Home</a>
                         <a href="about.html" class="nav-item nav-link">About Us</a>
                         <a href="program.html" class="nav-item nav-link">Programs</a>
@@ -336,29 +351,65 @@
         </div>
     </section>
 
+    <!-- facebook -->
+    <!-- Facebook SDK -->
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v19.0">
+    </script>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="row align-items-center g-4">
+
+                <!-- Left Column (Text) -->
+                <div class="col-lg-6">
+                    <h2 class="fw-bold text-primary mb-3">Stay Connected</h2>
+                    <p class="text-muted mb-0">
+                        Follow us on Facebook to get updates, stories from the field, and learn more about how Goducate
+                        is helping transform lives across Asia.
+                    </p>
+                    <a href="https://www.facebook.com/MBKPhilippines" target="_blank" class="btn btn-primary mt-3">
+                        Visit Our Page <i class="fa fa-arrow-right ms-2"></i>
+                    </a>
+                </div>
+
+                <!-- Right Column (Facebook Plugin) -->
+                <div class="col-lg-4">
+                    <div class="bg-white p-3 rounded shadow fb-responsive-container">
+                        <div class="fb-page" data-href="https://www.facebook.com/MBKPhilippines" data-tabs="timeline"
+                            data-width="" data-height="500" data-small-header="false" data-hide-cover="true"
+                            data-show-facepile="true">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- IMPACT / ACHIEVEMENTS SECTION -->
     <section class="impact text-white py-5" style="background-color: #0a3d62;">
         <div class="container text-center">
             <div class="row g-4">
                 <div class="col-md-3">
-                    <h1 class="fw-bold outlined-text">5,000+</h1>
+                    <h1 class="fw-bold outlined-text counter" data-target="5000">0</h1>
                     <p>Leaders Trained</p>
                 </div>
                 <div class="col-md-3">
-                    <h1 class="fw-bold outlined-text">120+</h1>
+                    <h1 class="fw-bold outlined-text counter" data-target="120">0</h1>
                     <p>Partner Organizations</p>
                 </div>
                 <div class="col-md-3">
-                    <h1 class="fw-bold outlined-text">50+</h1>
+                    <h1 class="fw-bold outlined-text counter" data-target="50">0</h1>
                     <p>Communities Reached</p>
                 </div>
                 <div class="col-md-3">
-                    <h1 class="fw-bold outlined-text">15+</h1>
+                    <h1 class="fw-bold outlined-text counter" data-target="15">0</h1>
                     <p>Years of Service</p>
                 </div>
             </div>
         </div>
     </section>
+
 
     <!-- GALLERY PREVIEW SECTION -->
     <section class="gallery py-5">
