@@ -79,7 +79,7 @@
 
 document.addEventListener("DOMContentLoaded", function () {
     const counters = document.querySelectorAll(".counter");
-    const speed = 300; // lower = faster
+    const speed = 4000; // lower = faster
 
     const animateCount = (counter) => {
         const target = +counter.getAttribute("data-target");
@@ -110,4 +110,4 @@ document.addEventListener("DOMContentLoaded", function () {
     }, { threshold: 0.5 });
 
     counters.forEach((counter) => observer.observe(counter));
-});
+}); 

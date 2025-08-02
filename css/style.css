@@ -339,8 +339,8 @@
 .bg-breadcrumb {
   position: relative;
   overflow: hidden;
-  background: linear-gradient(rgba(1, 95, 201, 0.9), rgba(0, 0, 0, 0.2)),
-    url(../img/bg-breadcrumb.jpg);
+  background: linear-gradient(rgba(56, 136, 228, 0.9), rgba(0, 0, 0, 0.2)),
+    url(../img/index/MBK.png);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -1111,4 +1111,55 @@
   font-size: 14px;
   margin: 0;
 }
- 
+
+/* testimony */
+.video-card {
+  max-width: 420px;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.video-card:hover {
+  transform: translateY(-5px);
+}
+
+.video-thumb {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+  /* 16:9 ratio */
+  background-size: cover;
+  background-position: center;
+}
+
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.35);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.video-card:hover .video-overlay {
+  opacity: 1;
+}
+
+.video-overlay i {
+  font-size: 3rem;
+  color: white;
+}
+
+.video-title {
+  padding: 15px;
+  font-size: 1rem;
+  color: #222;
+}
