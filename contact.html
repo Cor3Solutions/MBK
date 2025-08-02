@@ -5,25 +5,30 @@
     <meta charset="utf-8">
     <title>My Brother's Keeper PH</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    
+
     <!-- SEO -->
-    <meta name="description" content="My Brother’s Keeper PH: Empowering communities through outreach, leadership training, and values formation programs in partnership with the PNP.">
-    <meta name="keywords" content="MBK, My Brother's Keeper, outreach, leadership training, PNP, values formation, Philippines">
+    <meta name="description"
+        content="My Brother’s Keeper PH: Empowering communities through outreach, leadership training, and values formation programs in partnership with the PNP.">
+    <meta name="keywords"
+        content="MBK, My Brother's Keeper, outreach, leadership training, PNP, values formation, Philippines">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.facebook.com/MBKPhilippines">
     <meta property="og:title" content="My Brother's Keeper PH">
-    <meta property="og:description" content="Empowering communities through outreach, leadership training, and values formation programs in partnership with the PNP.">
+    <meta property="og:description"
+        content="Empowering communities through outreach, leadership training, and values formation programs in partnership with the PNP.">
     <!--<meta property="og:image" content="https://yourwebsite.com/img/logo.png">-->
- 
+
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="img/logo.png">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Inter:wght@400;500;700&display=swap"
+        rel="stylesheet">
 
     <!-- Icons -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
@@ -100,6 +105,7 @@
                         <a href="index.html" class="nav-item nav-link">Home</a>
                         <a href="about.html" class="nav-item nav-link ">About Us</a>
                         <a href="program.html" class="nav-item nav-link">Programs</a>
+                        <a href="lesson.html" class="nav-item nav-link">Lessons</a>
                         <a href="gallery.html" class="nav-item nav-link">Gallery / Media</a>
                         <a href="getinvolved.html" class="nav-item nav-link">Get Involved</a>
                         <a href="contact.html" class="nav-item nav-link active">Contact</a>
@@ -114,40 +120,43 @@
     <!-- Header Start -->
     <div class="container-fluid bg-breadcrumb">
         <div class="container text-center py-5" style="max-width: 900px;">
-            <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">Contact Us</h4>
-            <ol class="breadcrumb d-flex justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
-                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                <li class="breadcrumb-item"><a href="#">Pages</a></li>
-                <li class="breadcrumb-item active text-primary">Contact</li>
-            </ol>
+            <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">Contact</h4>
+            <p class="lead text-white wow fadeInUp" data-wow-delay="0.3s" style="max-width: 750px; margin: 0 auto;">
+                We would love to hear from you! Whether you have questions, suggestions, or want to get involved,
+                please reach out to us.
         </div>
     </div>
     <!-- Header End -->
 
 
-    <!-- Contact Start -->
+    <!-- CONTACT START -->
     <div class="container-fluid contact bg-light py-5">
         <div class="container py-5">
             <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
                 <h4 class="text-primary">Contact Us</h4>
-                <h1 class="display-4 mb-4">If you have any comments please apply now</h1>
+                <h1 class="display-4 mb-4">We’d love to hear from you</h1>
+                <p class="mb-0">Get in touch with us for volunteering, partnerships, or any inquiries.</p>
             </div>
+
             <div class="row g-5">
+                <!-- LOCATION MAP -->
                 <div class="col-xl-6 wow fadeInLeft" data-wow-delay="0.2s">
-                    <div class="contact-img d-flex justify-content-center">
-                        <div class="contact-img-inner">
-                            <img src="img/contact-img.png" class="img-fluid w-100" alt="Image">
-                        </div>
+                    <div class="ratio ratio-16x9 shadow rounded overflow-hidden">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3871.544699244465!2d121.30192507510115!3d14.180993186696808!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397d9a5b7b0893f%3A0x5f5e8f2f5673a8ef!2sPuypuy%2C%20Bay%2C%20Laguna%2C%20Philippines!5e0!3m2!1sen!2sph!4v1733000000000!5m2!1sen!2sph"
+                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
                     </div>
                 </div>
+
+                <!-- Form -->
                 <div class="col-xl-6 wow fadeInRight" data-wow-delay="0.4s">
                     <div>
                         <h4 class="text-primary">Send Your Message</h4>
-                        <p class="mb-4">The contact form is currently inactive. Get a functional and working contact
-                            form with Ajax & PHP in a few minutes. Just copy and paste the files, add a little code and
-                            you're done. <a class="text-primary fw-bold"
-                                href="https://htmlcodex.com/contact-form">Download Now</a>.</p>
-                        <form>
+                        <p class="mb-4">You can send us an email or directly message us via Facebook Messenger.</p>
+
+                        <form id="contactForm">
                             <div class="row g-3">
                                 <div class="col-lg-12 col-xl-6">
                                     <div class="form-floating">
@@ -165,19 +174,11 @@
                                 </div>
                                 <div class="col-lg-12 col-xl-6">
                                     <div class="form-floating">
-                                        <input type="phone" class="form-control border-0" id="phone"
-                                            placeholder="Phone">
+                                        <input type="text" class="form-control border-0" id="phone" placeholder="Phone">
                                         <label for="phone">Your Phone</label>
                                     </div>
                                 </div>
                                 <div class="col-lg-12 col-xl-6">
-                                    <div class="form-floating">
-                                        <input type="text" class="form-control border-0" id="project"
-                                            placeholder="Project">
-                                        <label for="project">Your Project</label>
-                                    </div>
-                                </div>
-                                <div class="col-12">
                                     <div class="form-floating">
                                         <input type="text" class="form-control border-0" id="subject"
                                             placeholder="Subject">
@@ -190,163 +191,116 @@
                                             id="message" style="height: 120px"></textarea>
                                         <label for="message">Message</label>
                                     </div>
-
                                 </div>
-                                <div class="col-12">
-                                    <button class="btn btn-primary w-100 py-3">Send Message</button>
+
+                                <!-- Buttons -->
+                                <div class="col-12 d-flex gap-2">
+                                    <button type="button" onclick="sendEmail()" class="btn btn-primary w-50 py-3">
+                                        Send via Email
+                                    </button>
+                                    <button type="button" onclick="sendMessenger()" class="btn btn-success w-50 py-3">
+                                        Send via Messenger
+                                    </button>
                                 </div>
                             </div>
                         </form>
                     </div>
                 </div>
-                <div class="col-12">
-                    <div>
-                        <div class="row g-4">
-                            <div class="col-md-6 col-lg-3 wow fadeInUp" data-wow-delay="0.2s">
-                                <div class="contact-add-item">
-                                    <div class="contact-icon text-primary mb-4">
-                                        <i class="fas fa-map-marker-alt fa-2x"></i>
-                                    </div>
-                                    <div>
-                                        <h4>Address</h4>
-                                        <p class="mb-0">123 Street New York.USA</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-lg-3 wow fadeInUp" data-wow-delay="0.4s">
-                                <div class="contact-add-item">
-                                    <div class="contact-icon text-primary mb-4">
-                                        <i class="fas fa-envelope fa-2x"></i>
-                                    </div>
-                                    <div>
-                                        <h4>Mail Us</h4>
-                                        <p class="mb-0">info@example.com</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-lg-3 wow fadeInUp" data-wow-delay="0.6s">
-                                <div class="contact-add-item">
-                                    <div class="contact-icon text-primary mb-4">
-                                        <i class="fa fa-phone-alt fa-2x"></i>
-                                    </div>
-                                    <div>
-                                        <h4>Telephone</h4>
-                                        <p class="mb-0">(+012) 3456 7890</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-lg-3 wow fadeInUp" data-wow-delay="0.8s">
-                                <div class="contact-add-item">
-                                    <div class="contact-icon text-primary mb-4">
-                                        <i class="fab fa-firefox-browser fa-2x"></i>
-                                    </div>
-                                    <div>
-                                        <h4>Yoursite@ex.com</h4>
-                                        <p class="mb-0">(+012) 3456 7890</p>
-                                    </div>
-                                </div>
-                            </div>
+            </div>
+        </div>
+        <!-- Contact End -->
+
+        <!-- MBK FOOTER  -->
+        <footer class="mbk-footer text-white pt-5" style="background-color: #002147;"> <!-- PNP/MBK navy blue -->
+            <div class="container">
+
+                <div class="row g-5">
+                    <!-- Logo & About -->
+                    <div class="col-lg-4 col-md-6">
+                        <img src="img/logo1.png" alt="MBK Logo" class="mb-3" style="max-width: 180px;">
+                        <p>
+                            My Brother’s Keeper-Philippines is a transformational movement for righteous leadership
+                            in all
+                            sectors.
+                            We are a proud partner of the Philippine National Police in building integrity and
+                            leadership.
+                        </p>
+                        <!-- Social Media -->
+                        <div class="d-flex mt-3">
+                            <a href="https://www.facebook.com/MBKPhilippines" target="_blank"
+                                class="btn btn-outline-light btn-sm rounded-circle me-2">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="https://www.youtube.com/@MBKPhilippines" target="_blank"
+                                class="btn btn-outline-light btn-sm rounded-circle me-2">
+                                <i class="fab fa-youtube"></i>
+                            </a>
                         </div>
                     </div>
-                </div>
-                <div class="col-12 wow fadeInUp" data-wow-delay="0.2s">
-                    <div class="rounded">
-                        <iframe class="rounded w-100" style="height: 400px;"
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387191.33750346623!2d-73.97968099999999!3d40.6974881!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sbd!4v1694259649153!5m2!1sen!2sbd"
-                            loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+                    <!-- Quick Links -->
+                    <div class="col-lg-2 col-md-6">
+                        <h5 class="text-warning mb-3">Quick Links</h5>
+                        <ul class="list-unstyled footer-links">
+                            <li><a href="about.html" class="text-white text-decoration-none"><i
+                                        class="fas fa-angle-right me-2"></i> About Us</a></li>
+                            <li><a href="programs.html" class="text-white text-decoration-none"><i
+                                        class="fas fa-angle-right me-2"></i> Programs</a></li>
+                            <li><a href="gallery.html" class="text-white text-decoration-none"><i
+                                        class="fas fa-angle-right me-2"></i> Gallery</a></li>
+                            <li><a href="contact.html" class="text-white text-decoration-none"><i
+                                        class="fas fa-angle-right me-2"></i> Contact</a></li>
+                        </ul>
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Contact End -->
 
-    <!-- MBK FOOTER  -->
-    <footer class="mbk-footer text-white pt-5" style="background-color: #002147;"> <!-- PNP/MBK navy blue -->
-        <div class="container">
+                    <!-- Contact Info -->
+                    <div class="col-lg-3 col-md-6">
+                        <h5 class="text-warning mb-3">Contact Us</h5>
+                        <p><i class="fas fa-map-marker-alt me-2"></i> Puypuy, Bay, Laguna, Philippines, Bay,
+                            Philippines</p>
+                        <p><i class="fas fa-envelope me-2"></i> mbkphilippines@gmail.com</p>
+                        <p><i class="fas fa-phone-alt me-2"></i> +63 912 345 6789</p>
+                    </div>
 
-            <div class="row g-5">
-                <!-- Logo & About -->
-                <div class="col-lg-4 col-md-6">
-                    <img src="img/logo1.png" alt="MBK Logo" class="mb-3" style="max-width: 180px;">
-                    <p>
-                        My Brother’s Keeper-Philippines is a transformational movement for righteous leadership in all
-                        sectors.
-                        We are a proud partner of the Philippine National Police in building integrity and leadership.
-                    </p>
-                    <!-- Social Media -->
-                    <div class="d-flex mt-3">
-                        <a href="https://www.facebook.com/MBKPhilippines" target="_blank"
-                            class="btn btn-outline-light btn-sm rounded-circle me-2">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="https://www.youtube.com/@MBKPhilippines" target="_blank"
-                            class="btn btn-outline-light btn-sm rounded-circle me-2">
-                            <i class="fab fa-youtube"></i>
-                        </a>
+                    <!-- Get Involved -->
+                    <div class="col-lg-3 col-md-6">
+                        <h5 class="text-warning mb-3">Get Involved</h5>
+                        <p>Join us in building righteous leaders for the next generation.</p>
+                        <a href="contact.html" class="btn btn-warning btn-sm rounded-pill px-3">Volunteer /
+                            Partner</a>
                     </div>
                 </div>
 
-                <!-- Quick Links -->
-                <div class="col-lg-2 col-md-6">
-                    <h5 class="text-warning mb-3">Quick Links</h5>
-                    <ul class="list-unstyled footer-links">
-                        <li><a href="about.html" class="text-white text-decoration-none"><i
-                                    class="fas fa-angle-right me-2"></i> About Us</a></li>
-                        <li><a href="programs.html" class="text-white text-decoration-none"><i
-                                    class="fas fa-angle-right me-2"></i> Programs</a></li>
-                        <li><a href="gallery.html" class="text-white text-decoration-none"><i
-                                    class="fas fa-angle-right me-2"></i> Gallery</a></li>
-                        <li><a href="contact.html" class="text-white text-decoration-none"><i
-                                    class="fas fa-angle-right me-2"></i> Contact</a></li>
-                    </ul>
-                </div>
-
-                <!-- Contact Info -->
-                <div class="col-lg-3 col-md-6">
-                    <h5 class="text-warning mb-3">Contact Us</h5>
-                    <p><i class="fas fa-map-marker-alt me-2"></i> Puypuy, Bay, Laguna, Philippines, Bay, Philippines</p>
-                    <p><i class="fas fa-envelope me-2"></i> mbkphilippines@gmail.com</p>
-                    <p><i class="fas fa-phone-alt me-2"></i> +63 912 345 6789</p>
-                </div>
-
-                <!-- Get Involved -->
-                <div class="col-lg-3 col-md-6">
-                    <h5 class="text-warning mb-3">Get Involved</h5>
-                    <p>Join us in building righteous leaders for the next generation.</p>
-                    <a href="contact.html" class="btn btn-warning btn-sm rounded-pill px-3">Volunteer / Partner</a>
+                <!-- Footer Bottom -->
+                <hr class="my-4" style="border-color: rgba(255,255,255,0.2);">
+                <div class="text-center small">
+                    &copy; 2025 My Brother's Keeper - Philippines. All Rights Reserved. <br>
+                    Coded by <a class="border-bottom text-white" href="#" target="_blank">Cor3 Solutions</a> |
+                    Template by
+                    <a class="border-bottom text-white" href="https://htmlcodex.com" target="_blank">HTML Codex</a>
                 </div>
             </div>
-
-            <!-- Footer Bottom -->
-            <hr class="my-4" style="border-color: rgba(255,255,255,0.2);">
-            <div class="text-center small">
-                &copy; 2025 My Brother's Keeper - Philippines. All Rights Reserved. <br>
-                Coded by <a class="border-bottom text-white" href="#" target="_blank">Cor3 Solutions</a> | Template by
-                <a class="border-bottom text-white" href="https://htmlcodex.com" target="_blank">HTML Codex</a>
-            </div>
-        </div>
-    </footer>
-    <!-- Footer End -->
+        </footer>
+        <!-- Footer End -->
 
 
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-primary btn-lg-square rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-primary btn-lg-square rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>
 
 
-    <!-- JavaScript Libraries -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/wow/wow.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/counterup/counterup.min.js"></script>
-    <script src="lib/lightbox/js/lightbox.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+        <!-- JavaScript Libraries -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="lib/wow/wow.min.js"></script>
+        <script src="lib/easing/easing.min.js"></script>
+        <script src="lib/waypoints/waypoints.min.js"></script>
+        <script src="lib/counterup/counterup.min.js"></script>
+        <script src="lib/lightbox/js/lightbox.min.js"></script>
+        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
 
 
-    <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+        <!-- Template Javascript -->
+        <script src="js/main.js"></script>
 </body>
 
 </html>

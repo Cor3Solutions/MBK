@@ -34,8 +34,7 @@
     dots: true,
     loop: true,
     nav: false,
-    navText: [ 
-    ],
+    navText: [],
   });
 
   // testimonial carousel
@@ -47,10 +46,9 @@
     loop: true,
     margin: 25,
     nav: true,
-    navText: [ 
-    ],
+    navText: [],
     responsiveClass: true,
-      responsive: {
+    responsive: {
       0: { items: 1 },
       768: { items: 2 },
       992: { items: 3 },
@@ -78,36 +76,98 @@
 })(jQuery);
 
 document.addEventListener("DOMContentLoaded", function () {
-    const counters = document.querySelectorAll(".counter");
-    const speed = 4000; // lower = faster
+  const counters = document.querySelectorAll(".counter");
+  const speed = 4000; // lower = faster
 
-    const animateCount = (counter) => {
-        const target = +counter.getAttribute("data-target");
-        const increment = target / speed;
-        let count = 0;
+  const animateCount = (counter) => {
+    const target = +counter.getAttribute("data-target");
+    const increment = target / speed;
+    let count = 0;
 
-        const updateCount = () => {
-            count += increment;
-            if (count < target) {
-                counter.textContent = Math.ceil(count).toLocaleString();
-                requestAnimationFrame(updateCount);
-            } else {
-                counter.textContent = target.toLocaleString() + "+"; // Add "+" after finish
-            }
-        };
-
-        updateCount();
+    const updateCount = () => {
+      count += increment;
+      if (count < target) {
+        counter.textContent = Math.ceil(count).toLocaleString();
+        requestAnimationFrame(updateCount);
+      } else {
+        counter.textContent = target.toLocaleString() + "+"; // Add "+" after finish
+      }
     };
 
-    // Trigger animation when visible
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-                animateCount(entry.target);
-                observer.unobserve(entry.target); // Run once
-            }
-        });
-    }, { threshold: 0.5 });
+    updateCount();
+  };
 
-    counters.forEach((counter) => observer.observe(counter));
-}); 
+  // Trigger animation when visible
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          animateCount(entry.target);
+          observer.unobserve(entry.target); // Run once
+        }
+      });
+    },
+    { threshold: 0.5 }
+  );
+
+  counters.forEach((counter) => observer.observe(counter));
+});
+
+function sendEmail() {
+  // Get form values
+  const name = document.getElementById("name").value || "(No Name)";
+  const email = document.getElementById("email").value || "(No Email)";
+  const phone = document.getElementById("phone").value || "(No Phone)";
+  const subject =
+    document.getElementById("subject").value || "MBK Contact Form Submission";
+  const message = document.getElementById("message").value || "(No Message)";
+
+  // Your recipient email
+  const recipient = "telesforoleannefrank@gmail.com"; // <-- CHANGE TO YOUR EMAIL
+
+  // Format body
+  const body = `
+Name: ${name}
+Email: ${email}
+Phone: ${phone}
+
+Message:
+${message}
+    `;
+
+  // Open default mail client
+  window.location.href = `mailto:${recipient}?subject=${encodeURIComponent(
+    subject
+  )}&body=${encodeURIComponent(body)}`;
+}
+
+function sendMessenger() {
+  // Your FB Page Username or Page ID
+  const pageUsername = "jaddengg"; // <-- Change to your FB page username
+
+  // Get message from the form
+  const name = document.getElementById("name").value || "(No Name)";
+  const email = document.getElementById("email").value || "(No Email)";
+  const phone = document.getElementById("phone").value || "(No Phone)";
+  const subject =
+    document.getElementById("subject").value || "MBK Contact Form";
+  const message = document.getElementById("message").value || "(No Message)";
+
+  // Combine message text
+  const messengerMessage = `Hello! My name is ${name}.
+Email: ${email}
+Phone: ${phone}
+Subject: ${subject}
+
+Message:
+${message}`;
+
+  // Encode the message for URL
+  const encodedMessage = encodeURIComponent(messengerMessage);
+
+  // Try to open Messenger with pre-filled text (works mostly on mobile)
+  const messengerUrl = `https://m.me/${pageUsername}?text=${encodedMessage}`;
+
+  // Open in new tab/window
+  window.open(messengerUrl, "_blank");
+}
