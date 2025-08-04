@@ -75,7 +75,7 @@
                             <a class="btn p-0 text-primary me-3"
                                 href="https://www.youtube.com/@mybrotherskeeperphilippines" target="_blank"><i
                                     class="fab fa-youtube"></i></a>
-                         </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -86,15 +86,16 @@
     <!-- Navbar & Hero Start -->
     <div class="container-fluid nav-bar px-0 px-lg-4 py-lg-0" style="background-color: #dbf0ff;">
         <div class="container">
-            <nav class="navbar navbar-expand-lg navbar-light align-items-center">
+            <nav class="navbar navbar-expand-lg navbar-light align-items-center justify-content-between">
 
                 <!-- Logo -->
                 <a href="#" class="navbar-brand p-0">
                     <img src="img/logo1.png" alt="Logo" class="logo-img">
                 </a>
 
-                <!-- Social Icons (Mobile Only) -->
-                <div class="d-lg-none d-flex align-items-center me-1">
+                <!-- Icons + Hamburger as one group -->
+                <div class="d-flex align-items-center d-lg-none">
+                    <!-- Social Icons -->
                     <a class="text-primary mx-1" href="https://www.facebook.com/MBKPhilippines" target="_blank"
                         style="font-size: 1.4rem;">
                         <i class="fab fa-facebook-f"></i>
@@ -102,14 +103,14 @@
                     <a class="text-primary mx-1" href="https://www.youtube.com/@mybrotherskeeperphilippines"
                         target="_blank" style="font-size: 1.4rem;">
                         <i class="fab fa-youtube"></i>
-                    </a> 
-                </div>
+                    </a>
 
-                <!-- Mobile Menu Button -->
-                <button class="navbar-toggler ms-1" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarCollapse">
-                    <span class="fa fa-bars" style="font-size: 1.4rem;"></span>
-                </button>
+                    <!-- Hamburger -->
+                    <button class="navbar-toggler ms-2" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarCollapse">
+                        <span class="fa fa-bars" style="font-size: 1.4rem;"></span>
+                    </button>
+                </div>
 
                 <!-- Navigation Menu -->
                 <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
@@ -126,8 +127,8 @@
             </nav>
         </div>
     </div>
-    <!-- Navbar & Hero End --> 
-     
+    <!-- Navbar & Hero End -->
+
     <!-- Header Start -->
     <div class="container-fluid bg-breadcrumb">
         <div class="container text-center py-5" style="max-width: 900px;">
@@ -153,7 +154,7 @@
             <div class="mb-5">
                 <div class="row align-items-center g-4">
                     <!-- Large Thumbnail -->
-                    <div class="col-md-6">
+                    <div class="col-md-6 order-1 order-md-1">
                         <a href="#" data-bs-toggle="modal" data-bs-target="#outreachModal">
                             <img src="img/gallery/core1.jpg" class="img-fluid rounded shadow-lg gallery-img"
                                 alt="Outreach Program">
@@ -161,9 +162,7 @@
                     </div>
 
                     <!-- Title & Description -->
-                    <div class="col-md-6">
-
-                        <!-- PCR Month Recognition -->
+                    <div class="col-md-6 order-2 order-md-2">
                         <h5 class="fw-bold mt-4">MBK Honored at 30th PCR Month Culmination Ceremony</h5>
                         <p class="text-muted">
                             My Brother’s Keeper (MBK) was recognized during the 30th Police Community Relations (PCR)
@@ -187,7 +186,6 @@
                             partners for their support.
                             The event also featured a recap of activities like medical missions and outreach programs.
                         </p>
-
                         <button class="btn btn-primary rounded-pill px-4" data-bs-toggle="modal"
                             data-bs-target="#outreachModal">
                             View Gallery
@@ -196,14 +194,11 @@
                 </div>
             </div>
 
-            <!-- Modal -->
+            <!-- Outreach Modal -->
             <div class="modal fade" id="outreachModal" tabindex="-1" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered modal-xl">
                     <div class="modal-content bg-dark text-white">
-
-                        <!-- Scrollable Body -->
                         <div class="modal-body" style="max-height:80vh; overflow-y:auto;">
-
                             <div class="row g-3" style="background-color: #cce9ff;">
                                 <div class="col-md-4 col-sm-6"><img src="img/gallery/core10.jpg"
                                         class="img-fluid rounded shadow-sm" alt="CORE10"></div>
@@ -238,9 +233,16 @@
             <!-- PNP CALABARZON Album -->
             <div class="mb-5">
                 <div class="row align-items-center g-4">
+                    <!-- Large Thumbnail -->
+                    <div class="col-md-6 order-1 order-md-2">
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#plModal">
+                            <img src="img/gallery/leo.png" class="img-fluid rounded shadow-lg gallery-img"
+                                alt="PNP CALABARZON Event">
+                        </a>
+                    </div>
 
-                    <!-- Title & Description (Left Side) -->
-                    <div class="col-md-6">
+                    <!-- Text -->
+                    <div class="col-md-6 order-2 order-md-1">
                         <h5 class="fw-bold mt-4">
                             PNP CALABARZON Personnel Gather for DPPAR and Inspirational Session at Camp Vicente Lim
                         </h5>
@@ -251,32 +253,22 @@
                         </p>
                         <p class="text-muted">
                             Rev. <strong>Leo Decinal</strong>, National Coordinator of My Brother’s Keeper (MBK),
-                            delivered an inspirational
-                            message introducing the acronym <strong>E-W.A.N.K.Y.</strong> encouraging excellence,
-                            wholehearted work, integrity, and faith in God.
+                            delivered an inspirational message introducing the acronym <strong>E-W.A.N.K.Y.</strong>
+                            encouraging excellence, wholehearted work, integrity, and faith in God.
                         </p>
                         <p class="text-muted">
                             <strong>PCOL Christopher P. Bad-ang</strong> also emphasized the importance of discipline,
-                            consistency, and maintaining order
-                            within camp premises.
+                            consistency, and maintaining order within camp premises.
                         </p>
                         <button class="btn btn-primary rounded-pill px-4" data-bs-toggle="modal"
                             data-bs-target="#plModal">
                             View Gallery
                         </button>
                     </div>
-
-                    <!-- Large Thumbnail (Right Side) -->
-                    <div class="col-md-6">
-                        <a href="#" data-bs-toggle="modal" data-bs-target="#plModal">
-                            <img src="img/gallery/PL8.jpg" class="img-fluid rounded shadow-lg gallery-img"
-                                alt="PNP CALABARZON Event">
-                        </a>
-                    </div>
                 </div>
             </div>
 
-            <!-- Modal -->
+            <!-- PL Modal -->
             <div class="modal fade" id="plModal" tabindex="-1" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered modal-xl">
                     <div class="modal-content bg-dark text-white">
@@ -307,17 +299,16 @@
             <!-- MBK Recognition & Digital SWIM Launch -->
             <div class="mb-5">
                 <div class="row align-items-center g-4">
-
-                    <!-- Large Thumbnail (Left Side) -->
-                    <div class="col-md-6">
+                    <!-- Large Thumbnail -->
+                    <div class="col-md-6 order-1 order-md-1">
                         <a href="#" data-bs-toggle="modal" data-bs-target="#digitalSwimModal">
                             <img src="img/gallery/D1.jpg" class="img-fluid rounded shadow-lg gallery-img"
                                 alt="MBK Recognition & Digital SWIM Launch">
                         </a>
                     </div>
 
-                    <!-- Title & Description (Right Side) -->
-                    <div class="col-md-6">
+                    <!-- Text -->
+                    <div class="col-md-6 order-2 order-md-2">
                         <h5 class="fw-bold mt-4">
                             MBK Recognized and Expands Support Through Digital SWIM Launch
                         </h5>
@@ -346,7 +337,7 @@
                 </div>
             </div>
 
-            <!-- Modal -->
+            <!-- Digital Swim Modal -->
             <div class="modal fade" id="digitalSwimModal" tabindex="-1" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered modal-xl">
                     <div class="modal-content bg-dark text-white">
@@ -389,48 +380,43 @@
             <!-- Digitalized SWIM Launched in PRO3 -->
             <div class="mb-5">
                 <div class="row align-items-center g-4">
+                    <!-- Large Thumbnail -->
+                    <div class="col-md-6 order-1 order-md-2">
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#pro3Modal">
+                            <img src="img/gallery/W3.jpg" class="img-fluid rounded shadow-lg gallery-img"
+                                alt="Digitalized SWIM Launch PRO3">
+                        </a>
+                    </div>
 
-                    <!-- Title & Description (Left Side) -->
-                    <div class="col-md-6">
+                    <!-- Text -->
+                    <div class="col-md-6 order-2 order-md-1">
                         <h5 class="fw-bold mt-4">
                             Digitalized SWIM Launched in PRO3 to Boost Moral Development
                         </h5>
                         <p class="text-muted">
                             Police Regional Office 3, led by <strong>PBGEN Ponce Rogelio I. Peñones, Jr.</strong>,
-                            launched the
-                            <strong>Digitalized SWIM (Squad Weekly Interactive Meeting)</strong> at Camp Captain Julian
-                            Olivas in Pampanga
-                            to accelerate the rollout of the program.
+                            launched the <strong>Digitalized SWIM (Squad Weekly Interactive Meeting)</strong>
+                            at Camp Captain Julian Olivas in Pampanga to accelerate the rollout of the program.
                         </p>
                         <p class="text-muted">
-                            In partnership with MBK leaders <strong>PMGEN Mao Aplasca (Ret.)</strong>, <strong>PCOL
-                                Elmar Sillador (Ret.)</strong>,
-                            and <strong>Rev. Leo Decinal</strong>, the initiative aims to provide consistent,
-                            values-based guidance
+                            In partnership with MBK leaders <strong>PMGEN Mao Aplasca (Ret.)</strong>,
+                            <strong>PCOL Elmar Sillador (Ret.)</strong>, and <strong>Rev. Leo Decinal</strong>,
+                            the initiative aims to provide consistent, values-based guidance
                             to PNP personnel in PRO3 through digital tools.
                         </p>
                         <p class="text-muted">
                             The event gathered key police leaders and received positive feedback for its potential to
-                            strengthen
-                            <em>integrity, accountability, and personal growth</em> within the force.
+                            strengthen <em>integrity, accountability, and personal growth</em> within the force.
                         </p>
                         <button class="btn btn-primary rounded-pill px-4" data-bs-toggle="modal"
                             data-bs-target="#pro3Modal">
                             View Gallery
                         </button>
                     </div>
-
-                    <!-- Large Thumbnail (Right Side) -->
-                    <div class="col-md-6">
-                        <a href="#" data-bs-toggle="modal" data-bs-target="#pro3Modal">
-                            <img src="img/gallery/W3.jpg" class="img-fluid rounded shadow-lg gallery-img"
-                                alt="Digitalized SWIM Launch PRO3">
-                        </a>
-                    </div>
                 </div>
             </div>
 
-            <!-- Modal -->
+            <!-- PRO3 Modal -->
             <div class="modal fade" id="pro3Modal" tabindex="-1" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered modal-xl">
                     <div class="modal-content bg-dark text-white">
@@ -464,9 +450,9 @@
                 </div>
             </div>
 
-
         </div>
     </section>
+
 
     <!-- Lightbox2 CSS/JS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
@@ -537,15 +523,25 @@
                     <h5 class="text-warning mb-3">Contact Us</h5>
                     <p> <i class="fas fa-map-marker-alt me-2" style="color: red;"></i> Puypuy, Bay, Laguna, Philippines
                     </p>
-                    <p><i class="fas fa-envelope me-2"></i> mbkphilippines@gmail.com</p>
-                    <p><i class="fas fa-phone-alt me-2"></i> +63 912 345 6789</p>
+                    <p>
+                        <i class="fas fa-envelope me-2"></i>
+                        <a href="mailto:mbkphilippines@gmail.com" style="text-decoration:none; color:inherit;">
+                            mbkphilippines@gmail.com
+                        </a>
+                    </p>
+                    <p>
+                        <i class="fas fa-phone-alt me-2"></i>
+                        <a href="tel:+639123456789" style="text-decoration:none; color:inherit;">
+                            +63 912 345 6789
+                        </a>
+                    </p>
                 </div>
 
                 <!-- Get Involved -->
                 <div class="col-lg-3 col-md-6">
                     <h5 class="text-warning mb-3">Get Involved</h5>
-                    <p>Join us in building righteous leaders for the next generation.</p>
-                    <a href="contact.html" class="btn btn-warning btn-sm rounded-pill px-3">Volunteer / Partner</a>
+                    <p>Join us in building righteous leaders <br>for the next generation.</p>
+                    <a href="contact.html" class="btn btn-warning btn-sm rounded-pill px-3">Contact Us</a>
                 </div>
             </div>
 
@@ -553,8 +549,14 @@
             <hr class="my-4" style="border-color: rgba(255,255,255,0.2);">
             <div class="text-center small">
                 &copy; 2025 My Brother's Keeper - Philippines. All Rights Reserved. <br>
-                Powered by <a class="border-bottom text-white" href="#" target="_blank">Cor3 Solutions</a> | Template
-                <a class="border-bottom text-white" href="https://htmlcodex.com" target="_blank">HTML Codex</a>
+                Powered by
+                <a class="footer-link text-white" href="https://cor3-solutions.vercel.app" target="_blank">
+                    Cor3 Solutions
+                </a>
+                | Template
+                <a class="footer-link text-white" href="https://htmlcodex.com" target="_blank">
+                    HTML Codex
+                </a>
             </div>
         </div>
     </footer>
