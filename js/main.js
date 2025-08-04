@@ -40,7 +40,7 @@
   // testimonial carousel
   $(".testimonial-carousel").owlCarousel({
     autoplay: true,
-    smartSpeed: 1500,
+    smartSpeed: 300,
     center: false,
     dots: false,
     loop: true,
@@ -61,16 +61,8 @@
     time: 2000,
   });
 
-  // Back to top button
-  $(window).scroll(function () {
-    if ($(this).scrollTop() > 300) {
-      $(".back-to-top").fadeIn("slow");
-    } else {
-      $(".back-to-top").fadeOut("slow");
-    }
-  });
   $(".back-to-top").click(function () {
-    $("html, body").animate({ scrollTop: 0 }, 1500, "easeInOutExpo");
+    $("html, body").animate({ scrollTop: 0 }, 300); // Fast scroll
     return false;
   });
 })(jQuery);
@@ -142,18 +134,12 @@ ${message}
 }
 
 function sendMessenger() {
-  // Your FB Page Username or Page ID
-  const pageUsername = "jaddengg"; // <-- Change to your FB page username
-
-  // Get message from the form
   const name = document.getElementById("name").value || "(No Name)";
   const email = document.getElementById("email").value || "(No Email)";
   const phone = document.getElementById("phone").value || "(No Phone)";
-  const subject =
-    document.getElementById("subject").value || "MBK Contact Form";
+  const subject = document.getElementById("subject").value || "MBK Contact Form";
   const message = document.getElementById("message").value || "(No Message)";
 
-  // Combine message text
   const messengerMessage = `Hello! My name is ${name}.
 Email: ${email}
 Phone: ${phone}
@@ -162,12 +148,104 @@ Subject: ${subject}
 Message:
 ${message}`;
 
-  // Encode the message for URL
   const encodedMessage = encodeURIComponent(messengerMessage);
 
-  // Try to open Messenger with pre-filled text (works mostly on mobile)
-  const messengerUrl = `https://m.me/${pageUsername}?text=${encodedMessage}`;
+  // Just your page username (not the whole URL)
+  const pageUsername = "LFTelesforo";
 
-  // Open in new tab/window
+  // Mobile prefill link
+  const messengerUrl = `https://m.me/${pageUsername} `;
+
+  // Open Messenger chat
   window.open(messengerUrl, "_blank");
 }
+
+// navbar collapse on click outside
+document.addEventListener("click", function (event) {
+  const navbar = document.querySelector(".navbar-collapse");
+  const toggle = document.querySelector(".navbar-toggler");
+
+  // If navbar is open AND click is outside navbar & toggle button
+  if (
+    navbar.classList.contains("show") &&
+    !navbar.contains(event.target) &&
+    !toggle.contains(event.target)
+  ) {
+    const bsCollapse = new bootstrap.Collapse(navbar, { toggle: false });
+    bsCollapse.hide();
+  }
+});
+
+// carousels for testimonials and other items
+$(document).ready(function () {
+  // Initialize the TOP carousel (Left-to-Right)
+  $(".testimonial-carousel-top").owlCarousel({
+    loop: true,
+    margin: 20,
+    nav: false,
+    dots: false,
+    autoplay: true,
+    autoplayTimeout: 3000, // Increased pause between slides
+    autoplaySpeed: 2000, // Slower, smoother transition speed
+    slideTransition: "linear", // Linear transition for constant speed
+    autoplayHoverPause: true,
+    responsive: {
+      0: {
+        items: 1,
+        stagePadding: 50,
+      },
+      768: {
+        items: 2,
+        stagePadding: 50,
+      },
+      992: {
+        items: 3,
+        stagePadding: 50,
+      },
+    },
+  });
+
+  // Initialize the BOTTOM carousel (Right-to-Left)
+  $(".testimonial-carousel-bottom").owlCarousel({
+    loop: true,
+    margin: 20,
+    nav: false,
+    dots: false,
+    autoplay: true,
+    autoplayTimeout: 3000, // Increased pause between slides
+    autoplaySpeed: 2000, // Slower, smoother transition speed
+    slideTransition: "linear", // Linear transition for constant speed
+    autoplayHoverPause: true,
+    rtl: true, // This option makes the carousel move Right-to-Left
+    responsive: {
+      0: {
+        items: 1,
+        stagePadding: 50,
+      },
+      768: {
+        items: 2,
+        stagePadding: 50,
+      },
+      992: {
+        items: 3,
+        stagePadding: 50,
+      },
+    },
+  });
+});
+
+//Lessons
+$(".lessons-carousel").owlCarousel({
+  loop: true,
+  margin: 15,
+  autoplay: true,
+  autoplayTimeout: 3000,
+  autoplayHoverPause: true,
+  responsiveClass: true,
+  responsive: {
+    0: { items: 1 },
+    576: { items: 2 },
+    768: { items: 3 },
+    992: { items: 4 },
+  },
+});

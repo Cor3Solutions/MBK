@@ -63,8 +63,9 @@
                 <div class="col-lg-8 text-center text-lg-start mb-lg-0">
                     <div class="d-flex flex-wrap">
                         <div class="ps-3">
-                            <a href="mailto:mbkphilippines@gmail.com" class="text-muted small"><i
-                                    class="fas fa-envelope text-primary me-2"></i>mbkphilippines@gmail.com</a>
+                            <a href="mailto:mbkphilippines@gmail.com" class="text-muted small">
+                                <i class="fas fa-envelope text-primary me-2"></i>mbkphilippines@gmail.com
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -88,16 +89,32 @@
     <!-- Navbar & Hero Start -->
     <div class="container-fluid nav-bar px-0 px-lg-4 py-lg-0" style="background-color: #dbf0ff;">
         <div class="container">
-            <nav class="navbar navbar-expand-lg navbar-light">
+            <nav class="navbar navbar-expand-lg navbar-light align-items-center">
 
                 <!-- Logo -->
                 <a href="#" class="navbar-brand p-0">
                     <img src="img/logo1.png" alt="Logo" class="logo-img">
                 </a>
 
+                <!-- Social Icons (Mobile Only) -->
+                <div class="d-lg-none d-flex align-items-center me-1">
+                    <a class="text-primary mx-1" href="https://www.facebook.com/MBKPhilippines" target="_blank"
+                        style="font-size: 1.4rem;">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a class="text-primary mx-1" href="https://www.youtube.com/@mybrotherskeeperphilippines"
+                        target="_blank" style="font-size: 1.4rem;">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a class="text-primary mx-1" href="#" style="font-size: 1.4rem;">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+
                 <!-- Mobile Menu Button -->
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                    <span class="fa fa-bars"></span>
+                <button class="navbar-toggler ms-1" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarCollapse">
+                    <span class="fa fa-bars" style="font-size: 1.4rem;"></span>
                 </button>
 
                 <!-- Navigation Menu -->
@@ -106,7 +123,7 @@
                         <a href="index.html" class="nav-item nav-link active">Home</a>
                         <a href="about.html" class="nav-item nav-link">About Us</a>
                         <a href="program.html" class="nav-item nav-link">Programs</a>
-                        <a href="lesson.html" class="nav-item nav-link">Lessons</a> 
+                        <a href="lesson.html" class="nav-item nav-link">Lessons</a>
                         <a href="gallery.html" class="nav-item nav-link">Gallery / Media</a>
                         <a href="getinvolved.html" class="nav-item nav-link">Get Involved</a>
                         <a href="contact.html" class="nav-item nav-link">Contact</a>
@@ -301,6 +318,7 @@
             </div>
             <div class="row g-4">
 
+                <!-- Program Card 1 -->
                 <div class="col-md-6 col-lg-3">
                     <div class="program-card">
                         <div class="program-img" style="background-image: url('img/index/LD1.jpg');"></div>
@@ -366,7 +384,7 @@
                         is helping transform lives across Asia.
                     </p>
                     <a href="https://www.facebook.com/MBKPhilippines" target="_blank" class="btn btn-primary mt-3">
-                        Visit Our Page <i class="fa fa-arrow-right ms-2"></i>
+                        Follow us in Facebook <i class="fa fa-arrow-right ms-2"></i>
                     </a>
                 </div>
 
@@ -455,25 +473,18 @@
     </section>
 
 
-    <!-- TESTIMONIAL VIDEO SECTION -->
     <section class="testimonial-video text-center py-5" style="background-color: #cce9ff;">
         <div class="container py-5">
 
-            <!-- Section Title -->
             <h2 class="fw-bold mb-3">Hear Their Stories</h2>
             <p class="mb-5 text-dark">Real voices from leaders and communities transformed by MBK-Philippines.</p>
 
-            <!-- Video Carousel -->
-            <div class="testimonial-carousel owl-carousel">
-
-                <!-- Video Card -->
+            <div class="testimonial-carousel-top owl-carousel mb-4">
                 <div class="video-card mx-auto">
                     <a href="https://www.youtube.com/watch?v=xBmP6du5WtE" target="_blank" class="video-link">
                         <div class="video-thumb"
                             style="background-image: url('https://img.youtube.com/vi/xBmP6du5WtE/hqdefault.jpg');">
-                            <div class="video-overlay">
-                                <i class="fas fa-play"></i>
-                            </div>
+                            <div class="video-overlay"><i class="fas fa-play"></i></div>
                         </div>
                     </a>
                     <p class="video-title">
@@ -481,15 +492,11 @@
                         <strong>PCol Lambert A. Suerte</strong>
                     </p>
                 </div>
-
-                <!-- Video Card -->
                 <div class="video-card mx-auto">
                     <a href="https://youtu.be/Pkk5wjMz6TY" target="_blank" class="video-link">
                         <div class="video-thumb"
-                            style="background-image: url('https://img.youtube.com/vi/Pkk5wjMz6TY/hqdefault.jpg');">
-                            <div class="video-overlay">
-                                <i class="fas fa-play"></i>
-                            </div>
+                            style="background-image: url('img/index/GenM.jpg');">
+                            <div class="video-overlay"><i class="fas fa-play"></i></div>
                         </div>
                     </a>
                     <p class="video-title">
@@ -498,15 +505,11 @@
                         <small>MBK National Convenor</small>
                     </p>
                 </div>
-
-                <!-- Video Card -->
                 <div class="video-card mx-auto">
                     <a href="https://youtu.be/Nulk82ZHAxE" target="_blank" class="video-link">
                         <div class="video-thumb"
                             style="background-image: url('https://img.youtube.com/vi/Nulk82ZHAxE/hqdefault.jpg');">
-                            <div class="video-overlay">
-                                <i class="fas fa-play"></i>
-                            </div>
+                            <div class="video-overlay"><i class="fas fa-play"></i></div>
                         </div>
                     </a>
                     <p class="video-title">
@@ -516,14 +519,53 @@
                 </div>
             </div>
 
-            <!-- Call to Action -->
-            <div class="mt-5">
-                <a href="contact.html" class="btn btn-dark rounded-pill px-4 py-2 me-2">Volunteer</a>
-                <a href="contact.html" class="btn btn-outline-dark rounded-pill px-4 py-2">Partner With Us</a>
+            <div class="testimonial-carousel-bottom owl-carousel">
+                <!-- Video Card  
+                <div class="video-card mx-auto">
+                    <a href="https://www.facebook.com/share/v/1GVAeKYbpd/" target="_blank" class="video-link">
+                        <div class="video-thumb"
+                            style="background-image: url('https://img.youtube.com/vi/default.jpg');">
+                            <div class="video-overlay">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                    </a>
+                    <p class="video-title">
+                        A Life-changing Testimony of Internal Transformation by<br>
+                        <strong>PLTCOL Raquel M. Pagnas</strong><br>
+                    </p>
+                </div>-->
+
+                <div class="video-card mx-auto">
+                    <a href="https://youtu.be/Pkk5wjMz6TY" target="_blank" class="video-link">
+                        <div class="video-thumb"
+                            style="background-image: url('https://img.youtube.com/vi/Pkk5wjMz6TY/hqdefault.jpg');">
+                            <div class="video-overlay"><i class="fas fa-play"></i></div>
+                        </div>
+                    </a>
+                    <p class="video-title">
+                        A Life-changing Testimony by<br>
+                        <strong>Another Testimonial Name</strong>
+                    </p>
+                </div>
+                <div class="video-card mx-auto">
+                    <a href="https://youtu.be/Nulk82ZHAxE" target="_blank" class="video-link">
+                        <div class="video-thumb"
+                            style="background-image: url('https://img.youtube.com/vi/Nulk82ZHAxE/hqdefault.jpg');">
+                            <div class="video-overlay"><i class="fas fa-play"></i></div>
+                        </div>
+                    </a>
+                    <p class="video-title">
+                        A Life-changing Testimony by<br>
+                        <strong>Another Testimonial Name</strong>
+                    </p>
+                </div>
             </div>
         </div>
     </section>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 
     <!-- Footer Start -->
 
@@ -557,12 +599,18 @@
                 <div class="col-lg-2 col-md-6">
                     <h5 class="text-warning mb-3">Quick Links</h5>
                     <ul class="list-unstyled footer-links">
+                        <li><a href="index.html" class="text-white text-decoration-none"><i
+                                    class="fas fa-angle-right me-2"></i> Home</a></li>
                         <li><a href="about.html" class="text-white text-decoration-none"><i
                                     class="fas fa-angle-right me-2"></i> About Us</a></li>
-                        <li><a href="programs.html" class="text-white text-decoration-none"><i
+                        <li><a href="program.html" class="text-white text-decoration-none"><i
                                     class="fas fa-angle-right me-2"></i> Programs</a></li>
+                        <li><a href="lesson.html" class="text-white text-decoration-none"><i
+                                    class="fas fa-angle-right me-2"></i> Lessons</a></li>
                         <li><a href="gallery.html" class="text-white text-decoration-none"><i
                                     class="fas fa-angle-right me-2"></i> Gallery</a></li>
+                        <li><a href="getinvolved.html" class="text-white text-decoration-none"><i
+                                    class="fas fa-angle-right me-2"></i> Get Involved</a></li>
                         <li><a href="contact.html" class="text-white text-decoration-none"><i
                                     class="fas fa-angle-right me-2"></i> Contact</a></li>
                     </ul>
@@ -571,7 +619,8 @@
                 <!-- Contact Info -->
                 <div class="col-lg-3 col-md-6">
                     <h5 class="text-warning mb-3">Contact Us</h5>
-                    <p><i class="fas fa-map-marker-alt me-2"></i> Puypuy, Bay, Laguna, Philippines, Bay, Philippines</p>
+                    <p> <i class="fas fa-map-marker-alt me-2" style="color: red;"></i> Puypuy, Bay, Laguna, Philippines
+                    </p>
                     <p><i class="fas fa-envelope me-2"></i> mbkphilippines@gmail.com</p>
                     <p><i class="fas fa-phone-alt me-2"></i> +63 912 345 6789</p>
                 </div>
@@ -588,8 +637,14 @@
             <hr class="my-4" style="border-color: rgba(255,255,255,0.2);">
             <div class="text-center small">
                 &copy; 2025 My Brother's Keeper - Philippines. All Rights Reserved. <br>
-                Coded by <a class="border-bottom text-white" href="#" target="_blank">Cor3 Solutions</a> | Template by
-                <a class="border-bottom text-white" href="https://htmlcodex.com" target="_blank">HTML Codex</a>
+                Powered by
+                <a class="footer-link text-white" href="https://cor3-solutions.vercel.app" target="_blank">
+                    Cor3 Solutions
+                </a>
+                | Template
+                <a class="footer-link text-white" href="https://htmlcodex.com" target="_blank">
+                    HTML Codex
+                </a>
             </div>
         </div>
     </footer>

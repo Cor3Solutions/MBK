@@ -87,25 +87,40 @@
     <!-- Navbar & Hero Start -->
     <div class="container-fluid nav-bar px-0 px-lg-4 py-lg-0" style="background-color: #dbf0ff;">
         <div class="container">
-            <nav class="navbar navbar-expand-lg navbar-light">
+            <nav class="navbar navbar-expand-lg navbar-light align-items-center">
 
                 <!-- Logo -->
                 <a href="#" class="navbar-brand p-0">
                     <img src="img/logo1.png" alt="Logo" class="logo-img">
                 </a>
 
-                <!-- Mobile Menu Button -->
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                    <span class="fa fa-bars"></span>
-                </button>
+                <!-- Social Icons (Mobile Only) -->
+                <div class="d-lg-none d-flex align-items-center me-1">
+                    <a class="text-primary mx-1" href="https://www.facebook.com/MBKPhilippines" target="_blank"
+                        style="font-size: 1.4rem;">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a class="text-primary mx-1" href="https://www.youtube.com/@mybrotherskeeperphilippines"
+                        target="_blank" style="font-size: 1.4rem;">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a class="text-primary mx-1" href="#" style="font-size: 1.4rem;">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
 
+                <!-- Mobile Menu Button -->
+                <button class="navbar-toggler ms-1" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarCollapse">
+                    <span class="fa fa-bars" style="font-size: 1.4rem;"></span>
+                </button>
                 <!-- Navigation Menu -->
                 <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
                     <div class="navbar-nav px-3 rounded" style="background-color: #bee3ff;">
                         <a href="index.html" class="nav-item nav-link">Home</a>
                         <a href="about.html" class="nav-item nav-link active">About Us</a>
                         <a href="program.html" class="nav-item nav-link">Programs</a>
-                        <a href="lesson.html" class="nav-item nav-link">Lessons</a> 
+                        <a href="lesson.html" class="nav-item nav-link">Lessons</a>
                         <a href="gallery.html" class="nav-item nav-link">Gallery / Media</a>
                         <a href="getinvolved.html" class="nav-item nav-link">Get Involved</a>
                         <a href="contact.html" class="nav-item nav-link">Contact</a>
@@ -136,10 +151,17 @@
             <div class="col-lg-6">
                 <h2 class="fw-bold text-primary mb-4">Our Story</h2>
                 <p>
-                    As a working arm of <strong>GoDucate</strong> and an accredited partner of the
+                    As a working arm of
+                    <strong>
+                        <a href="https://goducate.vercel.app" target="_blank" class="goducate-link">
+                            GoDucate
+                        </a>
+                    </strong>
+                    and an accredited partner of the
                     <strong>Philippine National Police</strong> (PNP Accreditation No. 2023-09),
                     we work alongside leaders in every sector to inspire change from within.
                 </p>
+
                 <p>
                     Through programs such as the <strong>Internal Cleansing Program</strong> and the
                     <strong>Squad Weekly Interactive Meeting (SWIM)</strong>, we help leaders uphold ethical values,
@@ -280,8 +302,8 @@
             <div class="row g-5 align-items-center">
                 <!-- FAQ Accordion -->
                 <div class="col-xl-6">
-                    <h4 class="text-primary">Some Important FAQ's</h4>
-                    <h1 class="display-6 fw-bold mb-4">Common Questions About MBK</h1>
+                    <h4 class="text-primary">Frequently Asked Questions (FAQ's)</h4>
+                    <h1 class="display-6 fw-bold mb-4"> About MBK</h1>
 
                     <div class="accordion" id="accordionExample">
                         <!-- FAQ 1 -->
@@ -322,7 +344,7 @@
 
                 <!-- Image -->
                 <div class="col-xl-6 text-center">
-                    <img src="img/mbk-faq.jpg" class="img-fluid rounded shadow-lg" alt="MBK FAQs">
+                    <img src="img/logo.png" class="img-fluid rounded shadow-lg" alt="MBK FAQs">
                 </div>
             </div>
         </div>
@@ -373,8 +395,7 @@
                 <div class="col-lg-3 col-md-6">
                     <h5 class="text-warning mb-3">Contact Us</h5>
                     <p>
-                        <i class="fas fa-map-marker-alt me-2" style="color: red;"></i>
-                        Puypuy, Bay, Laguna, Philippines, Bay, Philippines
+                        <i class="fas fa-map-marker-alt me-2" style="color: red;"></i> Puypuy, Bay, Laguna, Philippines
                     </p>
                     <p><i class="fas fa-envelope me-2"></i> mbkphilippines@gmail.com</p>
                     <p><i class="fas fa-phone-alt me-2"></i> +63 912 345 6789</p>
@@ -392,7 +413,7 @@
             <hr class="my-4" style="border-color: rgba(255,255,255,0.2);">
             <div class="text-center small">
                 &copy; 2025 My Brother's Keeper - Philippines. All Rights Reserved. <br>
-                Coded by <a class="border-bottom text-white" href="#" target="_blank">Cor3 Solutions</a> | Template by
+                Powered by <a class="border-bottom text-white" href="#" target="_blank">Cor3 Solutions</a> | Template
                 <a class="border-bottom text-white" href="https://htmlcodex.com" target="_blank">HTML Codex</a>
             </div>
         </div>
