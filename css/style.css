@@ -1292,3 +1292,30 @@
 .footer-link:hover {
   text-decoration-thickness: 2px;
 }
+
+/* regions */
+.client-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 160px
+    width: 160px;
+    margin: 0 30px;
+}
+
+.client-logo div {
+    margin-top: 8px;
+    font-size: 14px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.client-logo img {
+    width: 130px;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #063362;
+    background-color: white;
+    padding: 7px;
+}

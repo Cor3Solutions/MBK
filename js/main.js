@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", function () {
         counter.textContent = Math.ceil(count).toLocaleString();
         requestAnimationFrame(updateCount);
       } else {
-        counter.textContent = target.toLocaleString() + "+"; // Add "+" after finish
+        counter.textContent = target.toLocaleString() + "+";
       }
     };
 
@@ -137,7 +137,8 @@ function sendMessenger() {
   const name = document.getElementById("name").value || "(No Name)";
   const email = document.getElementById("email").value || "(No Email)";
   const phone = document.getElementById("phone").value || "(No Phone)";
-  const subject = document.getElementById("subject").value || "MBK Contact Form";
+  const subject =
+    document.getElementById("subject").value || "MBK Contact Form";
   const message = document.getElementById("message").value || "(No Message)";
 
   const messengerMessage = `Hello! My name is ${name}.
@@ -248,4 +249,43 @@ $(".lessons-carousel").owlCarousel({
     768: { items: 3 },
     992: { items: 4 },
   },
+});
+
+$(document).ready(function () {
+  // Top Regions Carousel
+  $(".regions-carousel-top").owlCarousel({
+    loop: true,
+    margin: 20,
+    autoplay: true,
+    autoplayTimeout: 5000, // 3 seconds
+    autoplayHoverPause: true,
+    mouseDrag: true,
+    touchDrag: true,
+    responsiveClass: true,
+    responsive: {
+      0: { items: 2 },
+      576: { items: 3 },
+      768: { items: 4 },
+      992: { items: 6 }
+    }
+  });
+
+  // Bottom Regions Carousel (reverse direction)
+  $(".regions-carousel-bottom").owlCarousel({
+    loop: true,
+    margin: 20,
+    autoplay: true,
+    autoplayTimeout: 5000, // 3 seconds
+    autoplayHoverPause: true,
+    mouseDrag: true,
+    touchDrag: true,
+    rtl: true, // reverse direction
+    responsiveClass: true,
+    responsive: {
+      0: { items: 2 },
+      576: { items: 3 },
+      768: { items: 4 },
+      992: { items: 6 }
+    }
+  });
 });
