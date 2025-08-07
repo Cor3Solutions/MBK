@@ -1411,3 +1411,27 @@
     padding: 8px 14px;
   }
 }
+
+/*** logos ***/
+.custom-nav-btn {
+  position: absolute;
+  top: 40%;
+  transform: translateY(-50%);
+  background-color: #063362;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  font-size: 24px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.owl-prev {
+  left: -25px;
+}
+
+.owl-next {
+  right: -25px;
+}

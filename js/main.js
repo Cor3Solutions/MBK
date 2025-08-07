@@ -252,21 +252,19 @@ $(".lessons-carousel").owlCarousel({
 });
 
 $(document).ready(function () {
-  // Top Regions Carousel
   $(".regions-carousel-top").owlCarousel({
     loop: true,
     margin: 20,
     autoplay: true,
-    autoplayTimeout: 0, // Instant loop
-    autoplaySpeed: 6000, // Controls scroll speed (higher = slower)
+    autoplayTimeout: 0,
+    autoplaySpeed: 6000,
     smartSpeed: 6000,
+    slideTransition: 'linear',
     autoplayHoverPause: false,
-    slideTransition: 'linear', // Smooth scrolling
     dots: false,
-    nav: false,
-    mouseDrag: false,
-    touchDrag: false,
-    responsiveClass: true,
+    nav: false, // we'll use custom nav
+    mouseDrag: true,
+    touchDrag: true,
     responsive: {
       0: { items: 2 },
       576: { items: 3 },
@@ -275,7 +273,15 @@ $(document).ready(function () {
     },
   });
 
-  // Bottom Regions Carousel (Reverse direction)
+  // Custom Nav Controls
+  $(".owl-prev").click(function () {
+    $(".regions-carousel-top").trigger("prev.owl.carousel");
+  });
+  $(".owl-next").click(function () {
+    $(".regions-carousel-top").trigger("next.owl.carousel");
+  });
+
+  // Repeat same setup for bottom carousel if needed
   $(".regions-carousel-bottom").owlCarousel({
     loop: true,
     margin: 20,
@@ -287,10 +293,9 @@ $(document).ready(function () {
     autoplayHoverPause: false,
     dots: false,
     nav: false,
-    rtl: true, // Reverse direction
-    mouseDrag: false,
-    touchDrag: false,
-    responsiveClass: true,
+    rtl: true,
+    mouseDrag: true,
+    touchDrag: true,
     responsive: {
       0: { items: 2 },
       576: { items: 3 },
@@ -299,6 +304,7 @@ $(document).ready(function () {
     },
   });
 });
+
 
 
 //bible verse
