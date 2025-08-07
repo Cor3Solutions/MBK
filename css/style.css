@@ -334,38 +334,37 @@
   }
 }
 
- 
-
 .header-carousel-item::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 
-    /* Increased blue opacity (0.95) and adjusted gradient stops */
-    background: linear-gradient(90deg,
-        rgba(56, 136, 228, 0.95) 0%,
-        rgba(0, 0, 0, 0.3) 30%, /* Darker black and adjusted stop */
-        rgba(56, 136, 228, 0.95) 60%, /* Wider blue section */
-        rgba(0, 0, 0, 0.3) 90%, /* Adjusted dark stop */
-        rgba(56, 136, 228, 0.95) 100%
-    );
+  /* Increased blue opacity (0.95) and adjusted gradient stops */
+  background: linear-gradient(
+    90deg,
+    rgba(56, 136, 228, 0.95) 0%,
+    rgba(0, 0, 0, 0.3) 30%,
+    /* Darker black and adjusted stop */ rgba(56, 136, 228, 0.95) 60%,
+    /* Wider blue section */ rgba(0, 0, 0, 0.3) 90%,
+    /* Adjusted dark stop */ rgba(56, 136, 228, 0.95) 100%
+  );
 
-    background-size: 300% 100%;
-    mix-blend-mode: multiply;
-    /* Slightly increased animation speed (18s) */
-    animation: smoothWave 18s linear infinite;
+  background-size: 300% 100%;
+  mix-blend-mode: multiply;
+  /* Slightly increased animation speed (18s) */
+  animation: smoothWave 18s linear infinite;
 }
 
 @keyframes smoothWave {
-    0% {
-        background-position: 0 0;
-    }
-    100% {
-        background-position: -200% 0;
-    }
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
 }
 /*** Carousel Hero Header End ***/
 
@@ -1295,27 +1294,120 @@
 
 /* regions */
 .client-logo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 160px
-    width: 160px;
-    margin: 0 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 160px;
+  width: 150px;
+  margin: 0 30px;
 }
 
 .client-logo div {
-    margin-top: 8px;
-    font-size: 14px;
-    text-align: center;
-    white-space: nowrap;
+  margin-top: 8px;
+  font-size: 14px;
+  text-align: center;
+  white-space: nowrap;
 }
 
 .client-logo img {
-    width: 130px;
-    height: 130px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 4px solid #063362;
-    background-color: white;
-    padding: 7px;
+  width: 130px;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #063362;
+  background-color: white;
+  padding: 7px;
+}
+
+/* bible verse */
+.bible-verse-widget {
+  position: fixed;
+  top: 3in;
+  right: 2in;
+  z-index: 1050;
+  background: rgba(245, 251, 255, 0.8); /* light blue with 80% opacity */
+  border: 2px solid #bee3ff;
+  border-radius: 15px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  padding: 20px 18px 18px 18px; /* Added bottom padding */
+  max-width: 360px;
+  font-family: "Georgia", serif;
+  transition: all 0.3s ease-in-out;
+  box-sizing: border-box; /* Ensures padding stays inside bounds */
+}
+
+.verse-text {
+  font-size: 1.2rem;
+  color: #063362;
+  line-height: 1.5;
+  text-align: center;
+  margin-top: 5px; /* Create space for the close button */
+  position: relative;
+  z-index: 1;
+}
+
+.verse-reference {
+  display: block;
+  font-size: 1rem;
+  margin-top: 10px;
+  font-style: italic;
+  color: #555;
+}
+
+.toggle-btn {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  background: none;
+  border: none;
+  font-size: 22px;
+  color: #063362;
+  cursor: pointer;
+  font-weight: bold;
+  z-index: 1; /* Ensure it's above background but not overlapping text */
+}
+
+.show-verse-btn {
+  position: fixed;
+  top: 2in;
+  right: 2in;
+  z-index: 1050;
+  padding: 10px 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* 🔁 Responsive for Mobile */
+@media (max-width: 768px) {
+  .bible-verse-widget {
+    top: 1.5in;
+    right: 30px;
+    max-width: 90%;
+    padding: 20px 14px 18px 14px;
+  }
+
+  .verse-text {
+    font-size: 1rem;
+    margin-top: 28px;
+  }
+
+  .verse-reference {
+    font-size: 0.9rem;
+  }
+
+  .toggle-btn {
+    font-size: 20px;
+  }
+
+  .show-verse-btn {
+    top: 20px;
+    right: 20px;
+    font-size: 0.9rem;
+    padding: 8px 14px;
+  }
 }

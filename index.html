@@ -54,7 +54,7 @@
         class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
         <img src="img/logo1.png" alt="Loading..." class="spinner-logo">
     </div>
-    <!-- Spinner End -->
+    <!-- Spinner End --> 
 
     <!-- Topbar Start -->
     <div class="container-fluid topbar px-0 px-lg-4 bg-light py-2 d-none d-lg-block">
@@ -181,6 +181,19 @@
     </div>
     <!-- Carousel End -->
 
+    <!-- Bible Verse Widget -->
+    <div id="bibleVerseWidget" class="bible-verse-widget">
+        <div id="bibleVerseContent">
+            <div class="verse-text">
+                <strong>“Trust in the Lord with all your heart and lean not on your own understanding.”</strong><br>
+                <span class="text-muted">– Proverbs 3:5</span>
+            </div>
+            <button class="toggle-btn" onclick="toggleVerse()">×</button>
+        </div>
+        <button id="showVerseBtn" class="show-verse-btn d-none" onclick="toggleVerse()">Bible Verse of the Day</button>
+    </div>
+
+
     <div class="container-xxl py-5 bg-white">
         <div class="container text-center">
             <h4 class="section-title text-primary">Our Reach</h4>
@@ -263,10 +276,8 @@
                     <div>Caraga (Region XIII)</div>
                 </a>
             </div>
-
         </div>
     </div>
-
     <!-- Regions End -->
 
     <!-- Feature Start -->
@@ -448,11 +459,11 @@
 
                 <!-- Left Column (Text) -->
                 <div class="col-lg-6">
-                    <h2 class="fw-bold text-primary mb-3">Stay Connected</h2>
-                    <p class="text-muted mb-0">
-                        Follow us on Facebook to get updates, stories from the field, and learn more about how Goducate
-                        is helping transform lives across Asia.
-                    </p>
+                    <h2 class="fw-bold text-primary mb-3">Stay Connected</h2> 
+                    <p class="mb-4">
+                        Follow us on Facebook to stay updated with our latest programs, events, and community
+                        initiatives. Join our growing community of leaders and supporters dedicated to making a
+                        difference.
                     <a href="https://www.facebook.com/MBKPhilippines" target="_blank" class="btn btn-primary mt-3">
                         Follow us in Facebook <i class="fa fa-arrow-right ms-2"></i>
                     </a>

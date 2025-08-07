@@ -257,35 +257,106 @@ $(document).ready(function () {
     loop: true,
     margin: 20,
     autoplay: true,
-    autoplayTimeout: 5000, // 3 seconds
-    autoplayHoverPause: true,
-    mouseDrag: true,
-    touchDrag: true,
+    autoplayTimeout: 0, // Instant loop
+    autoplaySpeed: 6000, // Controls scroll speed (higher = slower)
+    smartSpeed: 6000,
+    autoplayHoverPause: false,
+    slideTransition: 'linear', // Smooth scrolling
+    dots: false,
+    nav: false,
+    mouseDrag: false,
+    touchDrag: false,
     responsiveClass: true,
     responsive: {
       0: { items: 2 },
       576: { items: 3 },
       768: { items: 4 },
-      992: { items: 6 }
-    }
+      992: { items: 6 },
+    },
   });
 
-  // Bottom Regions Carousel (reverse direction)
+  // Bottom Regions Carousel (Reverse direction)
   $(".regions-carousel-bottom").owlCarousel({
     loop: true,
     margin: 20,
     autoplay: true,
-    autoplayTimeout: 5000, // 3 seconds
-    autoplayHoverPause: true,
-    mouseDrag: true,
-    touchDrag: true,
-    rtl: true, // reverse direction
+    autoplayTimeout: 0,
+    autoplaySpeed: 6000,
+    smartSpeed: 6000,
+    slideTransition: 'linear',
+    autoplayHoverPause: false,
+    dots: false,
+    nav: false,
+    rtl: true, // Reverse direction
+    mouseDrag: false,
+    touchDrag: false,
     responsiveClass: true,
     responsive: {
       0: { items: 2 },
       576: { items: 3 },
       768: { items: 4 },
-      992: { items: 6 }
-    }
+      992: { items: 6 },
+    },
   });
 });
+
+
+//bible verse
+const bibleVerses = [
+  {
+    text: "Trust in the Lord with all your heart and lean not on your own understanding.",
+    ref: "Proverbs 3:5",
+  },
+  {
+    text: "I can do all things through Christ who strengthens me.",
+    ref: "Philippians 4:13",
+  },
+  {
+    text: "The Lord is my shepherd; I shall not want.",
+    ref: "Psalm 23:1",
+  },
+  {
+    text: "Be strong and courageous. Do not be afraid; do not be discouraged.",
+    ref: "Joshua 1:9",
+  },
+  {
+    text: "Cast all your anxiety on Him because He cares for you.",
+    ref: "1 Peter 5:7",
+  },
+  {
+    text: "Do everything in love.",
+    ref: "1 Corinthians 16:14",
+  },
+  {
+    text: "The joy of the Lord is your strength.",
+    ref: "Nehemiah 8:10",
+  },
+];
+
+function getDailyVerse() {
+  const today = new Date();
+  const dayIndex = today.getDate() % bibleVerses.length;
+  return bibleVerses[dayIndex];
+}
+
+function displayVerse() {
+  const verse = getDailyVerse();
+  document.getElementById("verseText").textContent = `“${verse.text}”`;
+  document.getElementById("verseRef").textContent = `– ${verse.ref}`;
+}
+
+function toggleVerse() {
+  const verseContent = document.getElementById("bibleVerseContent");
+  const showBtn = document.getElementById("showVerseBtn");
+
+  if (verseContent.style.display === "none") {
+    verseContent.style.display = "block";
+    showBtn.classList.add("d-none");
+  } else {
+    verseContent.style.display = "none";
+    showBtn.classList.remove("d-none");
+  }
+}
+
+// Show verse on load
+window.onload = displayVerse;
