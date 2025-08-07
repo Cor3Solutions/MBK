@@ -287,7 +287,7 @@ $(document).ready(function () {
     margin: 20,
     autoplay: true,
     autoplayTimeout: 0,
-    autoplaySpeed: 6000,
+    autoplaySpeed: 500,
     smartSpeed: 6000,
     slideTransition: 'linear',
     autoplayHoverPause: false,
