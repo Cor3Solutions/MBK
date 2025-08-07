@@ -1321,19 +1321,21 @@
 
 /* bible verse */
 .bible-verse-widget {
-  position: fixed;
+  position: absolute;
   top: 3in;
   right: 2in;
   z-index: 1050;
-  background: rgba(245, 251, 255, 0.8); /* light blue with 80% opacity */
+  background: rgba(245, 251, 255, 0.6);
   border: 2px solid #bee3ff;
   border-radius: 15px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
-  padding: 20px 18px 18px 18px; /* Added bottom padding */
+  padding: 20px 18px 18px 18px;
   max-width: 360px;
   font-family: "Georgia", serif;
   transition: all 0.3s ease-in-out;
-  box-sizing: border-box; /* Ensures padding stays inside bounds */
+  box-sizing: border-box;
+  cursor: move;
+  touch-action: none; /* Prevent double-tap zoom on mobile */
 }
 
 .verse-text {
@@ -1341,17 +1343,9 @@
   color: #063362;
   line-height: 1.5;
   text-align: center;
-  margin-top: 5px; /* Create space for the close button */
+  margin-top: 5px;
   position: relative;
   z-index: 1;
-}
-
-.verse-reference {
-  display: block;
-  font-size: 1rem;
-  margin-top: 10px;
-  font-style: italic;
-  color: #555;
 }
 
 .toggle-btn {
@@ -1364,14 +1358,14 @@
   color: #063362;
   cursor: pointer;
   font-weight: bold;
-  z-index: 1; /* Ensure it's above background but not overlapping text */
+  z-index: 2;
 }
 
 .show-verse-btn {
   position: fixed;
-  top: 2in;
-  right: 2in;
-  z-index: 1050;
+  top: 20px;
+  right: 20px;
+  z-index: 1060;
   padding: 10px 16px;
   background-color: #007bff;
   color: white;
@@ -1382,11 +1376,11 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-/* 🔁 Responsive for Mobile */
+/* Responsive for Mobile */
 @media (max-width: 768px) {
   .bible-verse-widget {
     top: 1.5in;
-    right: 30px;
+    right: 20px;
     max-width: 90%;
     padding: 20px 14px 18px 14px;
   }
@@ -1396,21 +1390,22 @@
     margin-top: 28px;
   }
 
-  .verse-reference {
-    font-size: 0.9rem;
-  }
-
   .toggle-btn {
     font-size: 20px;
   }
 
   .show-verse-btn {
-    top: 20px;
-    right: 20px;
     font-size: 0.9rem;
     padding: 8px 14px;
   }
 }
+
+.bible-verse-widget {
+  transform: translate(0px, 0px); /* Enable transform movement */
+  will-change: transform;
+  touch-action: none;
+}
+
 
 /*** logos ***/
 .custom-nav-btn {

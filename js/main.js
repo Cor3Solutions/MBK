@@ -307,62 +307,76 @@ $(document).ready(function () {
 
 
 
-//bible verse
-const bibleVerses = [
-  {
-    text: "Trust in the Lord with all your heart and lean not on your own understanding.",
-    ref: "Proverbs 3:5",
-  },
-  {
-    text: "I can do all things through Christ who strengthens me.",
-    ref: "Philippians 4:13",
-  },
-  {
-    text: "The Lord is my shepherd; I shall not want.",
-    ref: "Psalm 23:1",
-  },
-  {
-    text: "Be strong and courageous. Do not be afraid; do not be discouraged.",
-    ref: "Joshua 1:9",
-  },
-  {
-    text: "Cast all your anxiety on Him because He cares for you.",
-    ref: "1 Peter 5:7",
-  },
-  {
-    text: "Do everything in love.",
-    ref: "1 Corinthians 16:14",
-  },
-  {
-    text: "The joy of the Lord is your strength.",
-    ref: "Nehemiah 8:10",
-  },
-];
+ const bibleVerses = [
+    { text: "Trust in the Lord with all your heart and lean not on your own understanding.", ref: "Proverbs 3:5" },
+    { text: "I can do all things through Christ who strengthens me.", ref: "Philippians 4:13" },
+    { text: "The Lord is my shepherd; I shall not want.", ref: "Psalm 23:1" },
+    { text: "Be strong and courageous. Do not be afraid; do not be discouraged.", ref: "Joshua 1:9" },
+    { text: "Cast all your anxiety on Him because He cares for you.", ref: "1 Peter 5:7" },
+    { text: "Do everything in love.", ref: "1 Corinthians 16:14" },
+    { text: "The joy of the Lord is your strength.", ref: "Nehemiah 8:10" },
+  ];
 
-function getDailyVerse() {
-  const today = new Date();
-  const dayIndex = today.getDate() % bibleVerses.length;
-  return bibleVerses[dayIndex];
-}
-
-function displayVerse() {
-  const verse = getDailyVerse();
-  document.getElementById("verseText").textContent = `“${verse.text}”`;
-  document.getElementById("verseRef").textContent = `– ${verse.ref}`;
-}
-
-function toggleVerse() {
-  const verseContent = document.getElementById("bibleVerseContent");
-  const showBtn = document.getElementById("showVerseBtn");
-
-  if (verseContent.style.display === "none") {
-    verseContent.style.display = "block";
-    showBtn.classList.add("d-none");
-  } else {
-    verseContent.style.display = "none";
-    showBtn.classList.remove("d-none");
+  function getDailyVerse() {
+    const today = new Date();
+    const index = today.getDate() % bibleVerses.length;
+    return bibleVerses[index];
   }
-}
 
-// Show verse on load
-window.onload = displayVerse;
+  function displayVerse() {
+    const verse = getDailyVerse();
+    document.getElementById("verseText").textContent = `“${verse.text}”`;
+    document.getElementById("verseRef").textContent = `– ${verse.ref}`;
+  }
+
+  function toggleVerse() {
+    const verseContent = document.getElementById("bibleVerseContent");
+    const showBtn = document.getElementById("showVerseBtn");
+
+    if (verseContent.style.display === "none") {
+      verseContent.style.display = "block";
+      showBtn.classList.add("d-none");
+    } else {
+      verseContent.style.display = "none";
+      showBtn.classList.remove("d-none");
+    }
+  }
+
+  function makeDraggable(el) {
+    let posX = 0, posY = 0, currentX = 0, currentY = 0, dragging = false;
+
+    const onMouseDown = (e) => {
+      dragging = true;
+      currentX = (e.touches ? e.touches[0].clientX : e.clientX) - posX;
+      currentY = (e.touches ? e.touches[0].clientY : e.clientY) - posY;
+      document.addEventListener('mousemove', onMouseMove);
+      document.addEventListener('mouseup', onMouseUp);
+      document.addEventListener('touchmove', onMouseMove, { passive: false });
+      document.addEventListener('touchend', onMouseUp);
+    };
+
+    const onMouseMove = (e) => {
+      if (!dragging) return;
+
+      e.preventDefault();
+      posX = (e.touches ? e.touches[0].clientX : e.clientX) - currentX;
+      posY = (e.touches ? e.touches[0].clientY : e.clientY) - currentY;
+      el.style.transform = `translate(${posX}px, ${posY}px)`;
+    };
+
+    const onMouseUp = () => {
+      dragging = false;
+      document.removeEventListener('mousemove', onMouseMove);
+      document.removeEventListener('mouseup', onMouseUp);
+      document.removeEventListener('touchmove', onMouseMove);
+      document.removeEventListener('touchend', onMouseUp);
+    };
+
+    el.addEventListener('mousedown', onMouseDown);
+    el.addEventListener('touchstart', onMouseDown);
+  }
+
+  window.onload = () => {
+    displayVerse();
+    makeDraggable(document.getElementById("bibleVerseWidget"));
+  };
