@@ -273,14 +273,7 @@ $(document).ready(function () {
     },
   });
 
-  // Custom Nav Controls
-  $(".owl-prev").click(function () {
-    $(".regions-carousel-top").trigger("prev.owl.carousel");
-  });
-  $(".owl-next").click(function () {
-    $(".regions-carousel-top").trigger("next.owl.carousel");
-  });
-
+  
   // Repeat same setup for bottom carousel if needed
   $(".regions-carousel-bottom").owlCarousel({
     loop: true,
@@ -308,14 +301,16 @@ $(document).ready(function () {
 
 
  const bibleVerses = [
-    { text: "Trust in the Lord with all your heart and lean not on your own understanding.", ref: "Proverbs 3:5" },
-    { text: "I can do all things through Christ who strengthens me.", ref: "Philippians 4:13" },
-    { text: "The Lord is my shepherd; I shall not want.", ref: "Psalm 23:1" },
-    { text: "Be strong and courageous. Do not be afraid; do not be discouraged.", ref: "Joshua 1:9" },
-    { text: "Cast all your anxiety on Him because He cares for you.", ref: "1 Peter 5:7" },
-    { text: "Do everything in love.", ref: "1 Corinthians 16:14" },
-    { text: "The joy of the Lord is your strength.", ref: "Nehemiah 8:10" },
-  ];
+    { text: "“All Scripture is breathed out by God and profitable for teaching, for reproof, for correction, and for training in righteousness, that the man of God may be competent, equipped for every good work.", ref: "2 Timothy 3:16-17" },
+    { text: "Be merciful, even as your Father is merciful. Judge not, and you will not be judged; condemn not, and you will not be condemned; forgive, and you will be forgiven.", ref: "Luke 6:36-37" },
+    { text: "Be kind to one another, tenderhearted, forgiving one another, as God in Christ forgave you.", ref: "Ephesians 4:32" },
+    { text: "He himself bore our sins in his body on the tree, that we might die to sin and live to righteousness. By his wounds you have been healed.", ref: "1 Peter 2:24" },
+    { text: "Be angry and do not sin; do not let the sun go down on your anger, and give no opportunity to the devil.", ref: "Ephesians 4:26-27" },
+    { text: "A new commandment I give to you, that you love one another: just as I have loved you, you also are to love one another.", ref: "John 13:34" },
+    { text: "For I know the plans I have for you, declares the Lord, plans for welfare and not for evil, to give you a future and a hope.", ref: "Jeremiah 29:11" },
+    { text: "And we know that in all things God works for the good of those who love him, who have been called according to his purpose.", ref: "Romans 8:28" },
+    { text: "For I am convinced that neither death nor life, neither angels nor demons, neither the present nor the future, nor any powers, neither height nor depth, nor anything else in all creation, will be able to separate us from the love of God that is in Christ Jesus our Lord.", ref: "Romans 8:38-39" },
+    { text: "The Lord is my shepherd; I shall not want. He makes me lie down in green pastures. He leads me beside still waters. He restores my soul. He leads me in paths of righteousness for his name's sake.", ref: "Psalm 23:1-3" }  ];
 
   function getDailyVerse() {
     const today = new Date();

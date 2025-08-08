@@ -1406,7 +1406,6 @@
   touch-action: none;
 }
 
-
 /*** logos ***/
 .custom-nav-btn {
   position: absolute;
@@ -1429,4 +1428,11 @@
 
 .owl-next {
   right: -25px;
+}
+
+.nav-link.btn-outline-warning:hover {
+  background-color: #ffc107;
+  color: #000;
+  box-shadow: 0 0 10px rgba(255, 193, 7, 0.5);
+  transition: all 0.3s ease-in-out;
 }
