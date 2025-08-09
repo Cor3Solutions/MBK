@@ -299,7 +299,7 @@ $(document).ready(function () {
 
 const bibleVerses = [
   {
-    text: "“All Scripture is breathed out by God and profitable for teaching, for reproof, for correction, and for training in righteousness, that the man of God may be competent, equipped for every good work.",
+    text: "All Scripture is breathed out by God and profitable for teaching, for reproof, for correction, and for training in righteousness, that the man of God may be competent, equipped for every good work.",
     ref: "2 Timothy 3:16-17",
   },
   {
