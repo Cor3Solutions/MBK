@@ -1437,43 +1437,87 @@
   transition: all 0.3s ease-in-out;
 }
 
-.pdf-card {
+/* Main container for each video card */
+.video-card {
   background-color: #ffffff;
   border: 1px solid #e0e0e0;
   border-radius: 8px;
-  padding: 20px;
+  padding: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s;
-  height: 180px;
-  /* Adjust height to match video cards */
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-between;
+  /* Key change: Set a minimum height to ensure all cards are the same size */
+  min-height: 330px;
+  height: 100%;
+}
+
+.video-card:hover {
+  transform: translateY(-5px);
+}
+
+.video-link {
+  display: block;
+  position: relative;
   text-decoration: none;
   color: inherit;
 }
 
-.pdf-card:hover {
-  transform: translateY(-5px);
+.video-thumb {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+  background-size: cover;
+  background-position: center;
+  border-radius: 6px;
+  overflow: hidden;
 }
 
-.pdf-thumb {
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  background-color: #f1f1f1;
-  margin-bottom: 10px;
+  opacity: 0;
+  transition: opacity 0.3s;
 }
 
-.pdf-title {
+.video-link:hover .video-overlay {
+  opacity: 1;
+}
+
+.video-overlay i {
+  color: #fff;
+  font-size: 3rem;
+}
+
+/* Video title styling to ensure a consistent number of lines */
+.video-title {
   font-size: 1rem;
-  font-weight: bold;
-  color: #333;
-  text-decoration: none;
   text-align: center;
-  padding: 0 5px;
+  color: #333;
+  flex-grow: 1;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  /* Key change: Limit the title to a maximum of two lines */
+  -webkit-line-clamp: 2;
+  text-overflow: ellipsis;
+}
+
+.btn-primary {
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+  white-space: nowrap;
+}
+
+.btn-primary:hover {
+  background-color: #0b5ed7;
+  border-color: #0a58ca;
 }

@@ -426,22 +426,3 @@ $(document).ready(function () {
     },
   });
 });
-
-$(document).ready(function () {
-  $(".lessons-pdf-carousel").owlCarousel({
-    loop: true,
-    margin: 20,
-    nav: true,
-    dots: false,
-    autoplay: true,
-    autoplayTimeout: 0,
-    autoplaySpeed: 5000,
-    autoplayHoverPause: true,
-    responsive: {
-      0: { items: 1 },
-      576: { items: 2 },
-      768: { items: 3 },
-      992: { items: 4 },
-    },
-  });
-});
