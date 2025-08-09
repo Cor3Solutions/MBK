@@ -1436,3 +1436,44 @@
   box-shadow: 0 0 10px rgba(255, 193, 7, 0.5);
   transition: all 0.3s ease-in-out;
 }
+
+.pdf-card {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+  height: 180px;
+  /* Adjust height to match video cards */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+}
+
+.pdf-card:hover {
+  transform: translateY(-5px);
+}
+
+.pdf-thumb {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #f1f1f1;
+  margin-bottom: 10px;
+}
+
+.pdf-title {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+  text-decoration: none;
+  text-align: center;
+  padding: 0 5px;
+}

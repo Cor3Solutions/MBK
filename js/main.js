@@ -259,7 +259,7 @@ $(document).ready(function () {
     autoplayTimeout: 0,
     autoplaySpeed: 6000,
     smartSpeed: 6000,
-    slideTransition: 'linear',
+    slideTransition: "linear",
     autoplayHoverPause: false,
     dots: false,
     nav: false, // we'll use custom nav
@@ -273,7 +273,6 @@ $(document).ready(function () {
     },
   });
 
-  
   // Repeat same setup for bottom carousel if needed
   $(".regions-carousel-bottom").owlCarousel({
     loop: true,
@@ -282,7 +281,7 @@ $(document).ready(function () {
     autoplayTimeout: 0,
     autoplaySpeed: 500,
     smartSpeed: 6000,
-    slideTransition: 'linear',
+    slideTransition: "linear",
     autoplayHoverPause: false,
     dots: false,
     nav: false,
@@ -298,80 +297,151 @@ $(document).ready(function () {
   });
 });
 
+const bibleVerses = [
+  {
+    text: "“All Scripture is breathed out by God and profitable for teaching, for reproof, for correction, and for training in righteousness, that the man of God may be competent, equipped for every good work.",
+    ref: "2 Timothy 3:16-17",
+  },
+  {
+    text: "Be merciful, even as your Father is merciful. Judge not, and you will not be judged; condemn not, and you will not be condemned; forgive, and you will be forgiven.",
+    ref: "Luke 6:36-37",
+  },
+  {
+    text: "Be kind to one another, tenderhearted, forgiving one another, as God in Christ forgave you.",
+    ref: "Ephesians 4:32",
+  },
+  {
+    text: "He himself bore our sins in his body on the tree, that we might die to sin and live to righteousness. By his wounds you have been healed.",
+    ref: "1 Peter 2:24",
+  },
+  {
+    text: "Be angry and do not sin; do not let the sun go down on your anger, and give no opportunity to the devil.",
+    ref: "Ephesians 4:26-27",
+  },
+  {
+    text: "A new commandment I give to you, that you love one another: just as I have loved you, you also are to love one another.",
+    ref: "John 13:34",
+  },
+  {
+    text: "For I know the plans I have for you, declares the Lord, plans for welfare and not for evil, to give you a future and a hope.",
+    ref: "Jeremiah 29:11",
+  },
+  {
+    text: "And we know that in all things God works for the good of those who love him, who have been called according to his purpose.",
+    ref: "Romans 8:28",
+  },
+  {
+    text: "For I am convinced that neither death nor life, neither angels nor demons, neither the present nor the future, nor any powers, neither height nor depth, nor anything else in all creation, will be able to separate us from the love of God that is in Christ Jesus our Lord.",
+    ref: "Romans 8:38-39",
+  },
+  {
+    text: "The Lord is my shepherd; I shall not want. He makes me lie down in green pastures. He leads me beside still waters. He restores my soul. He leads me in paths of righteousness for his name's sake.",
+    ref: "Psalm 23:1-3",
+  },
+];
 
+function getDailyVerse() {
+  const today = new Date();
+  const index = today.getDate() % bibleVerses.length;
+  return bibleVerses[index];
+}
 
- const bibleVerses = [
-    { text: "“All Scripture is breathed out by God and profitable for teaching, for reproof, for correction, and for training in righteousness, that the man of God may be competent, equipped for every good work.", ref: "2 Timothy 3:16-17" },
-    { text: "Be merciful, even as your Father is merciful. Judge not, and you will not be judged; condemn not, and you will not be condemned; forgive, and you will be forgiven.", ref: "Luke 6:36-37" },
-    { text: "Be kind to one another, tenderhearted, forgiving one another, as God in Christ forgave you.", ref: "Ephesians 4:32" },
-    { text: "He himself bore our sins in his body on the tree, that we might die to sin and live to righteousness. By his wounds you have been healed.", ref: "1 Peter 2:24" },
-    { text: "Be angry and do not sin; do not let the sun go down on your anger, and give no opportunity to the devil.", ref: "Ephesians 4:26-27" },
-    { text: "A new commandment I give to you, that you love one another: just as I have loved you, you also are to love one another.", ref: "John 13:34" },
-    { text: "For I know the plans I have for you, declares the Lord, plans for welfare and not for evil, to give you a future and a hope.", ref: "Jeremiah 29:11" },
-    { text: "And we know that in all things God works for the good of those who love him, who have been called according to his purpose.", ref: "Romans 8:28" },
-    { text: "For I am convinced that neither death nor life, neither angels nor demons, neither the present nor the future, nor any powers, neither height nor depth, nor anything else in all creation, will be able to separate us from the love of God that is in Christ Jesus our Lord.", ref: "Romans 8:38-39" },
-    { text: "The Lord is my shepherd; I shall not want. He makes me lie down in green pastures. He leads me beside still waters. He restores my soul. He leads me in paths of righteousness for his name's sake.", ref: "Psalm 23:1-3" }  ];
+function displayVerse() {
+  const verse = getDailyVerse();
+  document.getElementById("verseText").textContent = `“${verse.text}”`;
+  document.getElementById("verseRef").textContent = `– ${verse.ref}`;
+}
 
-  function getDailyVerse() {
-    const today = new Date();
-    const index = today.getDate() % bibleVerses.length;
-    return bibleVerses[index];
+function toggleVerse() {
+  const verseContent = document.getElementById("bibleVerseContent");
+  const showBtn = document.getElementById("showVerseBtn");
+
+  if (verseContent.style.display === "none") {
+    verseContent.style.display = "block";
+    showBtn.classList.add("d-none");
+  } else {
+    verseContent.style.display = "none";
+    showBtn.classList.remove("d-none");
   }
+}
 
-  function displayVerse() {
-    const verse = getDailyVerse();
-    document.getElementById("verseText").textContent = `“${verse.text}”`;
-    document.getElementById("verseRef").textContent = `– ${verse.ref}`;
-  }
+function makeDraggable(el) {
+  let posX = 0,
+    posY = 0,
+    currentX = 0,
+    currentY = 0,
+    dragging = false;
 
-  function toggleVerse() {
-    const verseContent = document.getElementById("bibleVerseContent");
-    const showBtn = document.getElementById("showVerseBtn");
-
-    if (verseContent.style.display === "none") {
-      verseContent.style.display = "block";
-      showBtn.classList.add("d-none");
-    } else {
-      verseContent.style.display = "none";
-      showBtn.classList.remove("d-none");
-    }
-  }
-
-  function makeDraggable(el) {
-    let posX = 0, posY = 0, currentX = 0, currentY = 0, dragging = false;
-
-    const onMouseDown = (e) => {
-      dragging = true;
-      currentX = (e.touches ? e.touches[0].clientX : e.clientX) - posX;
-      currentY = (e.touches ? e.touches[0].clientY : e.clientY) - posY;
-      document.addEventListener('mousemove', onMouseMove);
-      document.addEventListener('mouseup', onMouseUp);
-      document.addEventListener('touchmove', onMouseMove, { passive: false });
-      document.addEventListener('touchend', onMouseUp);
-    };
-
-    const onMouseMove = (e) => {
-      if (!dragging) return;
-
-      e.preventDefault();
-      posX = (e.touches ? e.touches[0].clientX : e.clientX) - currentX;
-      posY = (e.touches ? e.touches[0].clientY : e.clientY) - currentY;
-      el.style.transform = `translate(${posX}px, ${posY}px)`;
-    };
-
-    const onMouseUp = () => {
-      dragging = false;
-      document.removeEventListener('mousemove', onMouseMove);
-      document.removeEventListener('mouseup', onMouseUp);
-      document.removeEventListener('touchmove', onMouseMove);
-      document.removeEventListener('touchend', onMouseUp);
-    };
-
-    el.addEventListener('mousedown', onMouseDown);
-    el.addEventListener('touchstart', onMouseDown);
-  }
-
-  window.onload = () => {
-    displayVerse();
-    makeDraggable(document.getElementById("bibleVerseWidget"));
+  const onMouseDown = (e) => {
+    dragging = true;
+    currentX = (e.touches ? e.touches[0].clientX : e.clientX) - posX;
+    currentY = (e.touches ? e.touches[0].clientY : e.clientY) - posY;
+    document.addEventListener("mousemove", onMouseMove);
+    document.addEventListener("mouseup", onMouseUp);
+    document.addEventListener("touchmove", onMouseMove, { passive: false });
+    document.addEventListener("touchend", onMouseUp);
   };
+
+  const onMouseMove = (e) => {
+    if (!dragging) return;
+
+    e.preventDefault();
+    posX = (e.touches ? e.touches[0].clientX : e.clientX) - currentX;
+    posY = (e.touches ? e.touches[0].clientY : e.clientY) - currentY;
+    el.style.transform = `translate(${posX}px, ${posY}px)`;
+  };
+
+  const onMouseUp = () => {
+    dragging = false;
+    document.removeEventListener("mousemove", onMouseMove);
+    document.removeEventListener("mouseup", onMouseUp);
+    document.removeEventListener("touchmove", onMouseMove);
+    document.removeEventListener("touchend", onMouseUp);
+  };
+
+  el.addEventListener("mousedown", onMouseDown);
+  el.addEventListener("touchstart", onMouseDown);
+}
+
+window.onload = () => {
+  displayVerse();
+  makeDraggable(document.getElementById("bibleVerseWidget"));
+};
+
+$(document).ready(function () {
+  $(".lessons-carousel").owlCarousel({
+    loop: true,
+    margin: 20,
+    nav: true,
+    dots: false,
+    autoplay: true,
+    autoplayTimeout: 0,
+    autoplaySpeed: 5000,
+    autoplayHoverPause: true,
+    responsive: {
+      0: { items: 1 },
+      576: { items: 2 },
+      768: { items: 3 },
+      992: { items: 4 },
+    },
+  });
+});
+
+$(document).ready(function () {
+  $(".lessons-pdf-carousel").owlCarousel({
+    loop: true,
+    margin: 20,
+    nav: true,
+    dots: false,
+    autoplay: true,
+    autoplayTimeout: 0,
+    autoplaySpeed: 5000,
+    autoplayHoverPause: true,
+    responsive: {
+      0: { items: 1 },
+      576: { items: 2 },
+      768: { items: 3 },
+      992: { items: 4 },
+    },
+  });
+});
