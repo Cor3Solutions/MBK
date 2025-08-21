@@ -251,55 +251,63 @@ $(".lessons-carousel").owlCarousel({
   },
 });
 
+// Regions carousels
 $(document).ready(function () {
   $(".regions-carousel-top").owlCarousel({
-    loop: true,
-    margin: 20,
     autoplay: true,
-    autoplayTimeout: 0,
-    autoplaySpeed: 6000,
-    smartSpeed: 6000,
-    slideTransition: "linear",
-    autoplayHoverPause: false,
+    autoplayTimeout: 3000,
+    autoplayHoverPause: true,
+    smartSpeed: 1000,
+    loop: true,
+    margin: 10,
+    nav: false,
     dots: false,
-    nav: false, // we'll use custom nav
-    mouseDrag: true,
-    touchDrag: true,
     responsive: {
-      0: { items: 2 },
-      576: { items: 3 },
-      768: { items: 4 },
-      992: { items: 6 },
+      0: {
+        items: 2,
+      },
+      576: {
+        items: 3,
+      },
+      768: {
+        items: 4,
+      },
+      992: {
+        items: 5,
+      },
     },
   });
 
-  // Repeat same setup for bottom carousel if needed
   $(".regions-carousel-bottom").owlCarousel({
-    loop: true,
-    margin: 20,
     autoplay: true,
-    autoplayTimeout: 0,
-    autoplaySpeed: 500,
-    smartSpeed: 6000,
-    slideTransition: "linear",
-    autoplayHoverPause: false,
-    dots: false,
+    autoplayTimeout: 3000,
+    autoplayHoverPause: true,
+    smartSpeed: 1000,
+    loop: true,
+    margin: 10,
     nav: false,
-    rtl: true,
-    mouseDrag: true,
-    touchDrag: true,
+    dots: false,
+    rtl: true, // This makes the carousel swipe from right to left
     responsive: {
-      0: { items: 2 },
-      576: { items: 3 },
-      768: { items: 4 },
-      992: { items: 6 },
+      0: {
+        items: 2,
+      },
+      576: {
+        items: 3,
+      },
+      768: {
+        items: 4,
+      },
+      992: {
+        items: 5,
+      },
     },
   });
 });
 
 const bibleVerses = [
   {
-    text: "“All Scripture is breathed out by God and profitable for teaching, for reproof, for correction, and for training in righteousness, that the man of God may be competent, equipped for every good work.",
+    text: "All Scripture is breathed out by God and profitable for teaching, for reproof, for correction, and for training in righteousness, that the man of God may be competent, equipped for every good work.",
     ref: "2 Timothy 3:16-17",
   },
   {
@@ -426,3 +434,4 @@ $(document).ready(function () {
     },
   });
 });
+ 
