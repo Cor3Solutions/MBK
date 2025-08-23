@@ -115,7 +115,7 @@ function sendEmail() {
   const message = document.getElementById("message").value || "(No Message)";
 
   // Your recipient email
-  const recipient = "telesforoleannefrank@gmail.com"; // <-- CHANGE TO YOUR EMAIL
+  const recipient = "mbkphilippines@gmail.com"; // <-- CHANGE TO YOUR EMAIL
 
   // Format body
   const body = `
@@ -132,34 +132,7 @@ ${message}
     subject
   )}&body=${encodeURIComponent(body)}`;
 }
-
-function sendMessenger() {
-  const name = document.getElementById("name").value || "(No Name)";
-  const email = document.getElementById("email").value || "(No Email)";
-  const phone = document.getElementById("phone").value || "(No Phone)";
-  const subject =
-    document.getElementById("subject").value || "MBK Contact Form";
-  const message = document.getElementById("message").value || "(No Message)";
-
-  const messengerMessage = `Hello! My name is ${name}.
-Email: ${email}
-Phone: ${phone}
-Subject: ${subject}
-
-Message:
-${message}`;
-
-  const encodedMessage = encodeURIComponent(messengerMessage);
-
-  // Just your page username (not the whole URL)
-  const pageUsername = "LFTelesforo";
-
-  // Mobile prefill link
-  const messengerUrl = `https://m.me/${pageUsername} `;
-
-  // Open Messenger chat
-  window.open(messengerUrl, "_blank");
-}
+ 
 
 // navbar collapse on click outside
 document.addEventListener("click", function (event) {
