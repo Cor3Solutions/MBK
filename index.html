@@ -90,7 +90,7 @@
         </div>
     </div>
     <!-- Topbar End -->
-     
+
     <!-- Mobile Topbar -->
     <div class="container-fluid bg-light py-2 d-block d-lg-none">
         <div class="container text-center">
@@ -250,18 +250,28 @@
     </div>
     <!-- Carousel End -->
 
-    <!-- Bible Verse Widget -->
-    <div id="bibleVerseWidget" class="bible-verse-widget">
-        <div id="bibleVerseContent">
-            <div class="verse-text">
-                <strong id="verseText">Loading...</strong><br>
-                <span class="text-muted" id="verseRef">– Reference</span>
-            </div>
-            <button class="toggle-btn" onclick="toggleVerse()">×</button>
-        </div>
-        <button id="showVerseBtn" class="show-verse-btn d-none" onclick="toggleVerse()">Bible Verse of the Day</button>
+    <!-- Bouncing Bible Ball -->
+    <div id="bibleBall" class="bible-ball" onclick="showBibleVerse()">
+        <img src="img/logo.png" alt="Bible Logo" class="ball-logo">
     </div>
-
+ 
+    <!-- Bible Verse Modal -->
+    <div class="modal fade" id="bibleVerseModal" tabindex="-1" aria-labelledby="bibleVerseModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-primary fw-bold" id="bibleVerseModalLabel">Bible Verse of the Day</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <strong id="verseText">Loading...</strong><br>
+                    <span class="text-muted" id="verseRef">– Reference</span>
+                </div>
+            </div>
+        </div>
+    </div>
+ 
     <div class="container-xxl py-5 bg-white">
         <div class="container text-center">
             <h4 class="section-title text-primary">Our Reach</h4>

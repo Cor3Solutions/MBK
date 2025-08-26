@@ -132,7 +132,6 @@ ${message}
     subject
   )}&body=${encodeURIComponent(body)}`;
 }
- 
 
 // navbar collapse on click outside
 document.addEventListener("click", function (event) {
@@ -277,117 +276,7 @@ $(document).ready(function () {
     },
   });
 });
-
-const bibleVerses = [
-  {
-    text: "All Scripture is breathed out by God and profitable for teaching, for reproof, for correction, and for training in righteousness, that the man of God may be competent, equipped for every good work.",
-    ref: "2 Timothy 3:16-17",
-  },
-  {
-    text: "Be merciful, even as your Father is merciful. Judge not, and you will not be judged; condemn not, and you will not be condemned; forgive, and you will be forgiven.",
-    ref: "Luke 6:36-37",
-  },
-  {
-    text: "Be kind to one another, tenderhearted, forgiving one another, as God in Christ forgave you.",
-    ref: "Ephesians 4:32",
-  },
-  {
-    text: "He himself bore our sins in his body on the tree, that we might die to sin and live to righteousness. By his wounds you have been healed.",
-    ref: "1 Peter 2:24",
-  },
-  {
-    text: "Be angry and do not sin; do not let the sun go down on your anger, and give no opportunity to the devil.",
-    ref: "Ephesians 4:26-27",
-  },
-  {
-    text: "A new commandment I give to you, that you love one another: just as I have loved you, you also are to love one another.",
-    ref: "John 13:34",
-  },
-  {
-    text: "For I know the plans I have for you, declares the Lord, plans for welfare and not for evil, to give you a future and a hope.",
-    ref: "Jeremiah 29:11",
-  },
-  {
-    text: "And we know that in all things God works for the good of those who love him, who have been called according to his purpose.",
-    ref: "Romans 8:28",
-  },
-  {
-    text: "For I am convinced that neither death nor life, neither angels nor demons, neither the present nor the future, nor any powers, neither height nor depth, nor anything else in all creation, will be able to separate us from the love of God that is in Christ Jesus our Lord.",
-    ref: "Romans 8:38-39",
-  },
-  {
-    text: "The Lord is my shepherd; I shall not want. He makes me lie down in green pastures. He leads me beside still waters. He restores my soul. He leads me in paths of righteousness for his name's sake.",
-    ref: "Psalm 23:1-3",
-  },
-];
-
-function getDailyVerse() {
-  const today = new Date();
-  const index = today.getDate() % bibleVerses.length;
-  return bibleVerses[index];
-}
-
-function displayVerse() {
-  const verse = getDailyVerse();
-  document.getElementById("verseText").textContent = `“${verse.text}”`;
-  document.getElementById("verseRef").textContent = `– ${verse.ref}`;
-}
-
-function toggleVerse() {
-  const verseContent = document.getElementById("bibleVerseContent");
-  const showBtn = document.getElementById("showVerseBtn");
-
-  if (verseContent.style.display === "none") {
-    verseContent.style.display = "block";
-    showBtn.classList.add("d-none");
-  } else {
-    verseContent.style.display = "none";
-    showBtn.classList.remove("d-none");
-  }
-}
-
-function makeDraggable(el) {
-  let posX = 0,
-    posY = 0,
-    currentX = 0,
-    currentY = 0,
-    dragging = false;
-
-  const onMouseDown = (e) => {
-    dragging = true;
-    currentX = (e.touches ? e.touches[0].clientX : e.clientX) - posX;
-    currentY = (e.touches ? e.touches[0].clientY : e.clientY) - posY;
-    document.addEventListener("mousemove", onMouseMove);
-    document.addEventListener("mouseup", onMouseUp);
-    document.addEventListener("touchmove", onMouseMove, { passive: false });
-    document.addEventListener("touchend", onMouseUp);
-  };
-
-  const onMouseMove = (e) => {
-    if (!dragging) return;
-
-    e.preventDefault();
-    posX = (e.touches ? e.touches[0].clientX : e.clientX) - currentX;
-    posY = (e.touches ? e.touches[0].clientY : e.clientY) - currentY;
-    el.style.transform = `translate(${posX}px, ${posY}px)`;
-  };
-
-  const onMouseUp = () => {
-    dragging = false;
-    document.removeEventListener("mousemove", onMouseMove);
-    document.removeEventListener("mouseup", onMouseUp);
-    document.removeEventListener("touchmove", onMouseMove);
-    document.removeEventListener("touchend", onMouseUp);
-  };
-
-  el.addEventListener("mousedown", onMouseDown);
-  el.addEventListener("touchstart", onMouseDown);
-}
-
-window.onload = () => {
-  displayVerse();
-  makeDraggable(document.getElementById("bibleVerseWidget"));
-};
+ 
 
 $(document).ready(function () {
   $(".lessons-carousel").owlCarousel({
@@ -407,4 +296,75 @@ $(document).ready(function () {
     },
   });
 });
- 
+
+const ball = document.getElementById("bibleBall");
+let x = 100,
+  y = 100;
+let dx = 2,
+  dy = 2;
+const speed = 15;
+let moving = true;
+
+function moveBall() {
+  const screenWidth = window.innerWidth - ball.offsetWidth;
+  const screenHeight = window.innerHeight - ball.offsetHeight;
+
+  x += dx;
+  y += dy;
+
+  if (x <= 0 || x >= screenWidth) dx = -dx;
+  if (y <= 0 || y >= screenHeight) dy = -dy;
+
+  ball.style.left = x + "px";
+  ball.style.top = y + "px";
+}
+setInterval(moveBall, speed);
+
+// Fetch Verse of the Day (OurManna API)
+async function fetchVerseOfTheDay() {
+  try {
+    const res = await fetch("https://beta.ourmanna.com/api/v1/get?format=json");
+    const data = await res.json();
+    document.getElementById("verseText").innerText = data.verse.details.text;
+    document.getElementById("verseRef").innerText =
+      "– " + data.verse.details.reference;
+
+    // Save to localStorage with today's date
+    localStorage.setItem(
+      "bibleVerse",
+      JSON.stringify({
+        text: data.verse.details.text,
+        ref: data.verse.details.reference,
+        date: new Date().toDateString(),
+      })
+    );
+  } catch (e) {
+    document.getElementById("verseText").innerText =
+      "For God so loved the world that He gave His one and only Son.";
+    document.getElementById("verseRef").innerText = "– John 3:16";
+  }
+}
+
+// Load verse (check if already saved today)
+function loadVerse() {
+  const saved = JSON.parse(localStorage.getItem("bibleVerse"));
+  const today = new Date().toDateString();
+
+  if (saved && saved.date === today) {
+    document.getElementById("verseText").innerText = saved.text;
+    document.getElementById("verseRef").innerText = "– " + saved.ref;
+  } else {
+    fetchVerseOfTheDay();
+  }
+}
+
+// Show verse modal
+function showBibleVerse() {
+  new bootstrap.Modal(document.getElementById("bibleVerseModal")).show();
+}
+
+// Run on page load
+loadVerse();
+
+// Refresh verse every 24 hours automatically
+setInterval(fetchVerseOfTheDay, 24 * 60 * 60 * 1000);
